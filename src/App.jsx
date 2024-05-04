@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./component/Navbar/Navbar";
 import Contact from "./component/Contact/contact";
 import Play from "./component/Play/play";
+import Firsthome from "./component/Firsthome/firsthome";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -15,6 +16,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route>
+          <Route path="firsthome" element={<Firsthome />} />
           <Route path="contact" element={<Contact />} />
           <Route path="play" element={<Play />} />
         </Route>
