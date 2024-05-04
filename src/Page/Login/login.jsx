@@ -11,14 +11,14 @@ export default function login() {
             <div>
               <label className="text-lg">Email</label>
               <input
-                className="flex justify-center border rounded-md border-gray-400 h-8 w-60"
+                className="flex justify-center border rounded-md border-gray-400 h-8 w-60 px-2"
                 placeholder="Enter your email"
               />
             </div>
             <div>
               <label className="text-lg">Password</label>
               <input
-                className="flex justify-center border rounded-md border-gray-400 h-8 w-60"
+                className="flex justify-center border rounded-md border-gray-400 h-8 w-60 px-2"
                 placeholder="Enter your password"
                 type="password"
               />
