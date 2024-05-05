@@ -4,12 +4,12 @@ import Logo from "../../assets/Home-Logo.png";
 export default function login() {
   return (
     <div className="flex justify-center ">
-      <div className="rounded-none border-2 border-gray-400 mt-20">
+      <div className="rounded-md border-2 shadow-2xl mt-20 w-[700px]">
         <div className="grid grid-cols-2 ">
           <div className="px-10 py-10 ">
-            <h1 className="text-3xl font-semibold">Login</h1>
-            <h2 className="font-medium text-lg text-gray-500 mt-4">
-              Does'n have an acoount yet? Sign Up
+            <h1 className="text-2xl font-semibold">Login</h1>
+            <h2 className="text-lg text-gray-500 mt-4">
+              Does'n have an acoount yet?
             </h2>
             <div className="mt-8">
               <div>
