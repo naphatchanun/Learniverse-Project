@@ -10,8 +10,8 @@ export default function login() {
             <h1 className="text-2xl font-semibold">Login</h1>
             <p className="text-black self-center flex gap-1 mt-4">
               Doesn't have an account yet?
-              <a className="text-[#FB6D48] underline" href="/sign-in">
-                Sign in
+              <a className="text-[#FB6D48] underline" href="/Sign-Up">
+                Sign Up
               </a>
             </p>
             <div className="mt-8">

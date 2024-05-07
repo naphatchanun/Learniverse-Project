@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <nav className="bg-[#FB6D48] ">
       <div className="flex justify-between items-ceneter w-[92%]">
-        <div className="">
+        <div className="px-10">
           <img src={Logo} alt="" className="w-[100px]" />
         </div>
         <div className="flex justify-center">
@@ -40,7 +40,7 @@ function Navbar() {
         </div>
         <div className="flex items-center">
           <Link to="/login">
-            <button className="rounded-full bg-[#FBF3D5] px-5 py-2 text-xl">
+            <button className="rounded-md bg-[#FBF3D5] px-5 py-2 text-xl">
               Log in
             </button>
           </Link>

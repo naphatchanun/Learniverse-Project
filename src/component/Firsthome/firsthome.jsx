@@ -1,15 +1,25 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function firsthome() {
   return (
-    <div>
-      <h2>Home</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
-        ipsum et iste nihil natus tenetur omnis reiciendis vitae veniam sapiente
-        blanditiis modi dolor nobis explicabo, a facere voluptatem consectetur
-        laborum!
-      </p>
+    <div className="">
+      <h1 className="px-10 text-5xl mt-10 font-semibold">
+        Motivation is what sets you in motion, <br /> habit is what keeps you
+        going.
+      </h1>
+      <h2 className="px-10 mt-5 text-lg">
+        learniverse is a place where you can develop your academic knowledge and
+        practice <br /> questions. However, don't forget to become a member with
+        us.
+      </h2>
+      <div className="px-10">
+        <Link to="/SignUp">
+          <button className="mt-5 rounded-md bg-[#FB6D48] text-white w-[100px] h-[40px]">
+            Sign Up
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }
