@@ -8,9 +8,12 @@ export default function login() {
         <div className="grid grid-cols-2 ">
           <div className="px-10 py-10 ">
             <h1 className="text-2xl font-semibold">Login</h1>
-            <h2 className="text-lg text-gray-500 mt-4">
-              Does'n have an acoount yet?
-            </h2>
+            <p className="text-black self-center flex gap-1 mt-4">
+              Doesn't have an account yet?
+              <a className="text-[#FB6D48] underline" href="/sign-in">
+                Sign in
+              </a>
+            </p>
             <div className="mt-8">
               <div>
                 <label className="text-lg font-medium">Email</label>
