@@ -1,7 +1,6 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
-function firsthome() {
+const firsthome = () => {
   return (
     <div className="">
       <h1 className="px-10 text-5xl mt-10 font-semibold">
@@ -10,8 +9,8 @@ function firsthome() {
       </h1>
       <h2 className="px-10 mt-5 text-lg">
         learniverse is a place where you can develop your academic knowledge and
-        practice <br /> questions. However, don't forget to become a member with
-        us.
+        practice &lt;br /&gt; questions. However, don&apos;t forget to become a
+        member with us.
       </h2>
       <div className="px-10">
         <Link to="/SignUp">
@@ -22,6 +21,6 @@ function firsthome() {
       </div>
     </div>
   );
-}
+};
 
 export default firsthome;
