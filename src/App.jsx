@@ -1,28 +1,68 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ContextValue } from "./context/user";
+import { AxiosLib } from "./lib/axiosLib";
 
 //component
 import Navbar from "./component/Navbar/Navbar";
-import Contact from "./component/Contact/contact";
-import Play from "./component/Play/play";
-import Firsthome from "./component/Firsthome/firsthome";
+import Contact from "./Page/Contact/contact";
+import Play from "./Page/Play/play";
+import Firsthome from "./Page/Firsthome/firsthome";
 import Login from "./Page/Login/login";
 import SignUp from "./Page/SignUp/SignUp";
 
+import { AuthContext } from "./context/user";
+import { useCallback, useEffect, useState } from "react";
+
 export const App = () => {
+  const [authContext, setAuthContext] = useState(ContextValue);
+  const fetchMyData = useCallback(async () => {
+    try {
+      const response = await AxiosLib.get("/user/me");
+      if (response.status === 200) {
+        setAuthContext({
+          isLogin: true,
+          userId: response.data._id,
+          displayName: response.data.displayName,
+          firstName: response.data.firstName,
+          lastName: response.data.lastName,
+          email: response.data.email,
+          role: response.data.role,
+          phone: response.data.phone,
+        });
+      }
+    } catch (error) {
+      setAuthContext({
+        isLogin: false,
+        userId: "",
+        displayName: "",
+        firstName: "",
+        lastName: "",
+        email: "",
+        role: "",
+        phone: "",
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchMyData().then(() => console.log("success"));
+  }, [fetchMyData]);
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route>
-          <Route path="/" element={<Firsthome />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="play" element={<Play />} />
-          <Route path="login" element={<Login />} />
-          <Route path="signup" element={<SignUp />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <AuthContext.Provider value={authContext}>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route>
+            <Route path="/" element={<Firsthome />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="play" element={<Play />} />
+            <Route path="login" element={<Login />} />
+            <Route path="signup" element={<SignUp />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </AuthContext.Provider>
   );
 };
 
