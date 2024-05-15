@@ -62,15 +62,14 @@ const SignUp = () => {
                     placeholder="Enter your Email"
                   />
                 </div>
-                <div>
+                <div className="mt-2">
+                  <label className="text-sm font-medium ">Choose a Role</label>
                   <select
                     name="role"
                     id="underline_select"
-                    className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+                    className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
+                    disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
                   >
-                    <option selected disabled>
-                      Choose a Role
-                    </option>
                     <option value="Student">Student</option>
                     <option value="teacher">Teacher</option>
                   </select>
