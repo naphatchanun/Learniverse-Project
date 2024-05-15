@@ -14,7 +14,7 @@ function play() {
             className="mt-1 block w-full w-1/2 h-10 px-3 py-2 bg-[#FBF3D5] rounded-md text-sm shadow-sm "
           >
             <option selected disabled>
-              Choose
+              Grade
             </option>
             <option value="Student">Student</option>
             <option value="teacher">Teacher</option>
@@ -30,7 +30,7 @@ function play() {
                 placeholder="Enter your Password"
               >
                 <option selected disabled>
-                  Choose
+                  Subject
                 </option>
                 <option value="Student">Student</option>
                 <option value="teacher">Teacher</option>
@@ -51,7 +51,7 @@ function play() {
                     "
           >
             <option selected disabled>
-              Choose
+              Level
             </option>
             <option value="Student">Student</option>
             <option value="teacher">Teacher</option>
