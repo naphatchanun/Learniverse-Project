@@ -27,13 +27,6 @@ const firsthome = () => {
           <img src={Pichome} alt="" className="w-[300px]" />
         </div>
       </div>
-      <div className="mt-10">
-        <div className="grid grid-cols-3">
-          <div className="border border-slate-300 rounded-md"></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
     </main>
   );
 };
