@@ -27,6 +27,44 @@ const firsthome = () => {
           <img src={Pichome} alt="" className="w-3/4" />
         </div>
       </div>
+      <div>
+        <div className="grid grid-cols-3 px-5 mt-5 ">
+          <div className="flex justify-end">
+            <div className="border rounded-md px-10 w-2/3 py-3">
+              เสริมสร้างความรู้เเละทบทวนเนื้อหาทางการศึกษาผ่านเกม
+            </div>
+          </div>
+          <div className="flex justify-center">
+            <div className="border rounded-md px-10 w-2/3 py-3">
+              เสริมสร้างความรู้เเละทบทวนเนื้อหาทางการศึกษาผ่านเกม
+            </div>
+          </div>
+          <div className="flex justify-start">
+            <div className="border rounded-md px-10 w-2/3 py-3 bg-[#EEEEEE]">
+              เสริมสร้างความรู้เเละทบทวนเนื้อหาทางการศึกษาผ่านเกม
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <div>
+        <div className="grid grid-cols-3 px-5 mt-5 ">
+          <div className="flex justify-end">
+            <div className="border rounded-md px-10 w-2/3 py-3">
+              เสริมสร้างความรู้เเละทบทวนเนื้อหาทางการศึกษาผ่านเกม
+            </div>
+          </div>
+          <div className="flex justify-center">
+            <div className="border rounded-md px-10 w-2/3 py-3">
+              เสริมสร้างความรู้เเละทบทวนเนื้อหาทางการศึกษาผ่านเกม
+            </div>
+          </div>
+          <div className="flex justify-start">
+            <div className="border rounded-md px-10 w-2/3 py-3 bg-[#EEEEEE]">
+              เสริมสร้างความรู้เเละทบทวนเนื้อหาทางการศึกษาผ่านเกม
+            </div>
+          </div>
+        </div>
+      </div> */}
     </main>
   );
 };
