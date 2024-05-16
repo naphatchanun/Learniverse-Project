@@ -13,13 +13,8 @@ const contact = () => {
             <div className="flex justify-center mt-5">
               <img src={picture} alt="" className="w-20" />
             </div>
-            <div className="grid grid-cols-2">
-              <div className="mt-3">
-                <h1 className="flex justify-center">ชื่อ:วิชญ์วิสิฐ สรณวิช</h1>
-                <h2 className="flex justify-center">รหัส:63090500434</h2>
-              </div>
-              <div></div>
-            </div>
+            <h1 className="flex justify-center">ชื่อ:วิชญ์วิสิฐ สรณวิช</h1>
+            <h2 className="flex justify-center">รหัส:63090500434</h2>
           </div>
           <div className="border rounded-md w-2/3 h-30 shadow-lg border-black mt-10 transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 hover:bg-[#EEEEEE] duration-200">
             <div className="flex justify-center mt-5">

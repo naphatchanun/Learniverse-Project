@@ -41,10 +41,12 @@ const SignUp = () => {
           </div>
           <div className="grid grid-cols-2 mt-8">
             <div className="px-5">
-              <h1 className="text-2xl font-semibold">Sign Up</h1>
+              <h1 className="text-2xl font-semibold font-serif">Sign Up</h1>
               <div className="mt-8">
                 <div>
-                  <label className="text-sm font-medium ">First Name</label>
+                  <label className="text-sm font-medium font-serif">
+                    First Name
+                  </label>
                   <input
                     name="firstName"
                     className="mt-1 block w-full px-5 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
@@ -53,7 +55,9 @@ const SignUp = () => {
                   />
                 </div>
                 <div className="mt-2">
-                  <label className="text-sm font-medium ">Email</label>
+                  <label className="text-sm font-medium font-serif">
+                    Email
+                  </label>
                   <input
                     name="email"
                     type="email"
@@ -63,7 +67,9 @@ const SignUp = () => {
                   />
                 </div>
                 <div className="mt-2">
-                  <label className="text-sm font-medium ">Choose a Role</label>
+                  <label className="text-sm font-medium font-serif">
+                    Choose a Role
+                  </label>
                   <select
                     name="role"
                     id="underline_select"
@@ -75,7 +81,7 @@ const SignUp = () => {
                   </select>
                 </div>
                 <div className="py-5 mt-2">
-                  <button className="rounded-full bg-[#FB6D48] px-10 py-2 text-white">
+                  <button className="rounded-full bg-[#FB6D48] px-10 py-2 text-white font-serif">
                     Sign Up
                   </button>
                 </div>
@@ -84,7 +90,9 @@ const SignUp = () => {
             <div>
               <div className="mt-16 px-5">
                 <div>
-                  <label className="text-sm font-medium ">Last Name</label>
+                  <label className="text-sm font-medium font-serif">
+                    Last Name
+                  </label>
                   <input
                     name="lastName"
                     className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
@@ -93,7 +101,9 @@ const SignUp = () => {
                   />
                 </div>
                 <div className="mt-2">
-                  <label className="text-sm font-medium ">Password</label>
+                  <label className="text-sm font-medium font-serif">
+                    Password
+                  </label>
                   <input
                     type="password"
                     name="password"
@@ -103,7 +113,9 @@ const SignUp = () => {
                   />
                 </div>
                 <div className="mt-2">
-                  <label className="text-sm font-medium ">Phone</label>
+                  <label className="text-sm font-medium font-serif">
+                    Phone
+                  </label>
                   <input
                     name="phone"
                     type="number"

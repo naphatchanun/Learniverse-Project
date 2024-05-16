@@ -31,16 +31,16 @@ const login = () => {
       <div className="rounded-md border-2 shadow-2xl mt-20 w-[700px]">
         <div className="grid grid-cols-2 ">
           <div className="px-10 py-10 ">
-            <h1 className="text-2xl font-semibold">Login</h1>
-            <p className="text-black self-center flex gap-1 mt-4">
+            <h1 className="text-2xl font-semibold font-serif">Login</h1>
+            <p className="text-black self-center flex gap-1 mt-4 font-serif">
               Doesn&apos;t have an account yet?
-              <a className="text-[#FB6D48] underline" href="/SignUp">
+              <a className="text-[#FB6D48] underline font-serif" href="/SignUp">
                 Sign Up
               </a>
             </p>
             <div className="mt-8">
               <div>
-                <label className="text-lg font-medium">Email</label>
+                <label className="text-lg font-medium font-serif">Email</label>
                 <input
                   name="email"
                   type="email"
@@ -50,7 +50,9 @@ const login = () => {
                 />
               </div>
               <div>
-                <label className="text-lg font-medium">Password</label>
+                <label className="text-lg font-medium font-serif">
+                  Password
+                </label>
                 <input
                   name="password"
                   type="password"
@@ -59,11 +61,11 @@ const login = () => {
                   placeholder="Enter your password"
                 />
               </div>
-              <button className="mt-3 font-medium text-base text-violet-500">
+              <button className="mt-3 font-medium text-base text-violet-500 font-serif">
                 Forget password
               </button>
               <div className="py-5">
-                <button className="rounded-full bg-[#FB6D48] px-10 py-2 text-white">
+                <button className="rounded-full bg-[#FB6D48] px-10 py-2 text-white font-serif">
                   Log in
                 </button>
               </div>

@@ -6,18 +6,18 @@ const firsthome = () => {
     <main>
       <div className="grid grid-cols-2">
         <div className="px-5">
-          <h1 className="px-10 text-5xl mt-10 font-semibold">
+          <h1 className="px-10 text-5xl mt-10 font-semibold font-serif">
             Motivation is what sets you in motion, habit is what keeps you
             going.
           </h1>
-          <h2 className="px-10 mt-5 text-lg">
+          <h2 className="px-10 mt-5 text-lg font-serif">
             learniverse is a place where you can develop your academic knowledge
             and practice questions. However, don&apos;t forget to become a
             member with us.
           </h2>
           <div className="px-10">
             <Link to="/SignUp">
-              <button className="mt-5 rounded-md bg-[#FB6D48] text-white w-[100px] h-[40px]">
+              <button className="mt-5 rounded-md bg-[#FB6D48] text-white w-[100px] h-[40px] font-serif">
                 Sign Up
               </button>
             </Link>
