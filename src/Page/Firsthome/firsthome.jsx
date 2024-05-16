@@ -24,7 +24,7 @@ const firsthome = () => {
           </div>
         </div>
         <div className="flex justify-center mt-5">
-          <img src={Pichome} alt="" className="w-2/3" />
+          <img src={Pichome} alt="" className="w-3/4" />
         </div>
       </div>
     </main>
