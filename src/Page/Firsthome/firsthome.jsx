@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-import Pichome from "../../assets/pic-home.png";
+import Pichome from "../../assets/Ani.gif";
+// import Pichome from "../../assets/Ani2.png";
 
 const firsthome = () => {
   return (
     <main>
       <div className="grid grid-cols-2">
-        <div className="px-5">
+        <div className="px-10 py-15">
           <h1 className="px-10 text-5xl mt-10 font-semibold font-serif">
             Motivation is what sets you in motion, habit is what keeps you
             going.
@@ -23,13 +24,13 @@ const firsthome = () => {
             </Link>
           </div>
         </div>
-        <div className="flex justify-center mt-5">
-          <img src={Pichome} alt="" className="w-3/4" />
+        <div className="flex justify-center ">
+          <img src={Pichome} alt="" className="w-3/5" />
         </div>
       </div>
       <div>
         <div className="grid grid-cols-3 px-5 mt-5 ">
-          <div className="flex justify-end">
+          {/* <div className="flex justify-end">
             <div className="border rounded-md px-10 w-2/3 py-3">
               เสริมสร้างความรู้เเละทบทวนเนื้อหาทางการศึกษาผ่านเกม
             </div>
@@ -43,7 +44,7 @@ const firsthome = () => {
             <div className="border rounded-md px-10 w-2/3 py-3 bg-[#EEEEEE]">
               เสริมสร้างความรู้เเละทบทวนเนื้อหาทางการศึกษาผ่านเกม
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       {/* <div>
