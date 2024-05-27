@@ -106,7 +106,7 @@ const SignUp = () => {
                   </div>
                   <p className="block py-2 font-sans text-base antialiased font-normal leading-relaxed text-center text-gray-700">
                     Already have an account?
-                    <a href="/Login" className="font-medium text-gray-900">
+                    <a href="/Login" className="font-medium text-[#FB6D48]">
                       Log in
                     </a>
                   </p>
@@ -117,7 +117,7 @@ const SignUp = () => {
         </div>
         <div className="flex justify-center">
           <div className="flex justify-center items-center">
-            <img src={Sign} alt="" className="w-4/5 h-3/5" />
+            <img src={Sign} alt="" className="w-5/6 h-3/5" />
           </div>
         </div>
       </div>
