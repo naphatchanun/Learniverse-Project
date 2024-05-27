@@ -33,7 +33,7 @@ const login = () => {
           <div className="flex justify-items-center px-20">
             <div className="rounded-md border-2 shadow-2xl w-[350px]">
               <div className="px-5">
-                <h1 className="text-2xl font-semibold font-serif mt-3">
+                <h1 className="text-2xl font-semibold font-serif mt-9">
                   Login
                 </h1>
                 <p className="text-black self-center flex gap-1 mt-4 font-serif">
@@ -85,7 +85,7 @@ const login = () => {
         </div>
         <div className="flex justify-center">
           <div className="flex justify-center items-center">
-            <img src={Log} alt="" className="w-5/6 h-3/5" />
+            <img src={Log} alt="" className="w-[550px] h-[400px]" />
           </div>
         </div>
       </div>
