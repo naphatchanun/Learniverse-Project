@@ -101,7 +101,7 @@ function play() {
                     Subject:Mathematics <br />
                     Grade:มัธยมศึกษาปีที่ 5 <br />
                     Level:Normal <br />
-                    <button className="rounded-full bg-[#FB6D48] px-8 py-2 text-white font-serif mt-2">
+                    <button className="rounded-full bg-[#FB6D48] px-8 py-1 text-white font-serif mt-2">
                       Join
                     </button>
                   </div>
