@@ -11,39 +11,51 @@ function play() {
         </h2>
       </div>
       <div className="grid grid-cols-3">
-        <div className="flex justify-end mt-9">
-          <select
-            name="role"
-            id="underline_select"
-            className="mt-1 block w-1/2 h-10 px-3 py-2 bg-[#FBF3D5] rounded-md text-sm shadow-sm font-serif"
-          >
-            <option selected disabled>
-              Grade
-            </option>
-            <option value="มัธยมศึกษาปีที่ 1">มัธยมศึกษาปีที่ 1</option>
-            <option value="มัธยมศึกษาปีที่ 2">มัธยมศึกษาปีที่ 2</option>
-            <option value="มัธยมศึกษาปีที่ 3">มัธยมศึกษาปีที่ 3</option>
-            <option value="ธยมศึกษาปีที่ 4">มัธยมศึกษาปีที่ 4</option>
-            <option value="มัธยมศึกษาปีที่ 5">มัธยมศึกษาปีที่ 5</option>
-            <option value="มัธยมศึกษาปีที่ 6">มัธยมศึกษาปีที่ 6</option>
-          </select>
+        <div>
+          <div className="flex justify-end mt-9">
+            <div className="inline-block relative w-64">
+              <select className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                <option>Grade</option>
+                <option>มัธยมศึกษาปีที่ 1</option>
+                <option>มัธยมศึกษาปีที่ 2</option>
+                <option>มัธยมศึกษาปีที่ 3</option>
+                <option>มัธยมศึกษาปีที่ 4</option>
+                <option>มัธยมศึกษาปีที่ 5</option>
+                <option>มัธยมศึกษาปีที่ 6</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                <svg
+                  className="fill-current h-4 w-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="mt-9">
           <div>
             <div className="flex justify-center">
-              <select
-                name="role"
-                id="underline_select"
-                className="mt-1 block w-1/2 px-3 py-2 bg-[#FBF3D5] rounded-md text-sm shadow-sm font-serif "
-              >
-                <option selected disabled>
-                  Subject
-                </option>
-                <option value="Mathematics">Mathematics</option>
-                <option value="Biology">Biology</option>
-                <option value="Chemical">Chemical</option>
-                <option value="Physical">Physical</option>
-              </select>
+              <div className="inline-block relative w-64">
+                <select className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                  <option>Subject</option>
+                  <option>Mathematics</option>
+                  <option>Cemical</option>
+                  <option>Biology</option>
+                  <option>Physical</option>
+                </select>
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                  <svg
+                    className="fill-current h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                  </svg>
+                </div>
+              </div>
             </div>
             <div className="flex justify-center mt-10">
               <Link to="/testexam">
@@ -54,20 +66,26 @@ function play() {
             </div>
           </div>
         </div>
-        <div className="flex justify-start mt-9">
-          <select
-            name="role"
-            id="underline_select"
-            className="mt-1 block  w-1/2 h-10 px-3 py-2 bg-[#FBF3D5] rounded-md text-sm shadow-sm font-serif
-                    "
-          >
-            <option selected disabled>
-              Level
-            </option>
-            <option value="Easy">Easy</option>
-            <option value="Normal">Normal</option>
-            <option value="Difficult">Difficult</option>
-          </select>
+        <div>
+          <div className="flex justify-start mt-9">
+            <div className="inline-block relative w-64">
+              <select className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                <option>Level</option>
+                <option>Easy</option>
+                <option>Normal</option>
+                <option>Diffucult</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                <svg
+                  className="fill-current h-4 w-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div>
