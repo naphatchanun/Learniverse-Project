@@ -11,6 +11,7 @@ import Firsthome from "./Page/Firsthome/firsthome";
 import Login from "./Page/Login/login";
 import SignUp from "./Page/SignUp/SignUp";
 import Testexam from "./Page/Testexam/Testexam";
+import Account from "./Page/Account/account";
 
 import { AuthContext } from "./context/user";
 import { useCallback, useEffect, useState } from "react";
@@ -61,6 +62,7 @@ export const App = () => {
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<SignUp />} />
             <Route path="testexam" element={<Testexam />} />
+            <Route path="account" element={<Account />} />
           </Route>
         </Routes>
       </BrowserRouter>
