@@ -5,7 +5,7 @@ import { AxiosLib } from "./lib/axiosLib";
 
 //component
 import Navbar from "./component/Navbar/Navbar";
-import Contact from "./Page/Contact/contact";
+import Creact from "./Page/Creact/creact";
 import Play from "./Page/Play/play";
 import Firsthome from "./Page/Firsthome/firsthome";
 import Login from "./Page/Login/login";
@@ -57,7 +57,7 @@ export const App = () => {
         <Routes>
           <Route>
             <Route path="/" element={<Firsthome />} />
-            <Route path="contact" element={<Contact />} />
+            <Route path="creact" element={<Creact />} />
             <Route path="play" element={<Play />} />
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<SignUp />} />
