@@ -1,9 +1,11 @@
 import { Fragment, useState } from "react";
 import Modal from "../../component/Modal/Modal";
 import "boxicons";
+import EditExam from "../../component/Editexam/editexam";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
+  const [showEditExam, setShowEditExam] = useState(false);
   return (
     <Fragment>
       <div className="p-10 text-center flex justify-center">
@@ -24,6 +26,14 @@ export default function Home() {
           <div className="grid grid-rows-2">
             <div className="border rounded-md w-[750px] px-3 h-auto">
               <h1 className="text-xl font-bold inderline mt-8">Exam Storage</h1>
+              <div className="mt-80">
+                <botton
+                  className="rounded-md bg-[#FB6D48] px-10 py-2 text-white font-sans"
+                  onClick={() => setShowEditExam(true)}
+                >
+                  Edit
+                </botton>
+              </div>
             </div>
             <div className="border rounded-md w-[750px] px-3 h-auto mt-10">
               <h1 className="text-xl font-bold inderline mt-8">Play History</h1>
@@ -32,6 +42,10 @@ export default function Home() {
         </div>
       </div>
       <Modal isVisible={showModal} onClose={() => setShowModal(false)} />
+      <EditExam
+        isVisible={showEditExam}
+        onClose={() => setShowEditExam(false)}
+      />
     </Fragment>
   );
 }
