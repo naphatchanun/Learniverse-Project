@@ -117,7 +117,7 @@ const SignUp = () => {
         </div>
         <div className="flex justify-center">
           <div className="flex justify-center items-center">
-            <img src={Sign} alt="" className="w-[500px] h-[400px]" />
+            <img src={Sign} alt="" className="w-[500px] h-[450px]" />
           </div>
         </div>
       </div>
