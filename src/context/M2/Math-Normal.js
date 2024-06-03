@@ -5,11 +5,11 @@ export const NormalMath2 = [
     label: "Question 1",
     content: [
       {
-        question1: "ถ้า x+3 = 2(x-1) เเล้วค่า x เป็นเท่าใด?",
-        Ans1: "1",
-        Ans2: "2",
-        Ans3: "3",
-        Ans4: "5"(true),
+        question1: "จงหาค่าของ 5x-3 เมื่อ x=2?",
+        Ans1: "5",
+        Ans2: "7"(true),
+        Ans3: "9",
+        Ans4: "11",
       },
     ],
   },
@@ -17,11 +17,11 @@ export const NormalMath2 = [
     label: "Question 2",
     content: [
       {
-        question2: "ผลบวกของจำนวนเต็มคู่ 5 จำนวนแรกคือเท่าใด?",
-        Ans1: "20",
-        Ans2: "30"(true),
-        Ans3: "40",
-        Ans4: "50",
+        question2: "สมการ 2y+3 = 11 ค่าของ y คือเท่าใด?",
+        Ans1: "2",
+        Ans2: "3",
+        Ans3: "4"(true),
+        Ans4: "5",
       },
     ],
   },
@@ -30,11 +30,11 @@ export const NormalMath2 = [
     content: [
       {
         question2:
-          "ถ้าสามเหลี่ยม ABC มีมุม A = 40 องศา และมุม B = 60 องศา มุม C จะมีขนาดเท่าใด?",
-        Ans1: "40 องศา",
-        Ans2: "60 องศา",
-        Ans3: "80 องศา"(true),
-        Ans4: "100 องศา",
+          "ถ้าจำนวนเต็ม a หารด้วย 4 เหลือเศษ 1 เเละจำนวนเต็ม b หารด้วย 4 เหลือเศษ 3 เเล้ว a+b หารด้วย 4 จะเหลือเศษเท่าใด?",
+        Ans1: "0"(true),
+        Ans2: "1",
+        Ans3: "2",
+        Ans4: "3",
       },
     ],
   },
@@ -42,12 +42,11 @@ export const NormalMath2 = [
     label: "Question 4",
     content: [
       {
-        question2:
-          "ถ้าจำนวนเต็ม a หารด้วย 4 เหลือเศษ 3 และจำนวนเต็ม b หารด้วย 4 เหลือเศษ 1 แล้ว a+b หารด้วย 4 จะเหลือเศษเท่าใด?",
-        Ans1: "0"(true),
-        Ans2: "1",
-        Ans3: "2",
-        Ans4: "3",
+        question2: "ถ้า y = 2x+1 เเล้ว y มีค่าเท่าใดเมื่อ x = 3?",
+        Ans1: "10",
+        Ans2: "9",
+        Ans3: "8",
+        Ans4: "7"(true),
       },
     ],
   },
