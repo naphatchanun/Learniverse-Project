@@ -37,9 +37,7 @@ const SignUp = () => {
           <div className="flex justify-items-center px-20">
             <div className="rounded-md border-2 shadow-2xl w-[350px]">
               <div className="px-5">
-                <h1 className="text-2xl font-semibold font-serif mt-5">
-                  Sign Up
-                </h1>
+                <h1 className="text-2xl font-semibold font-serif mt-5">Sign</h1>
                 <div className="mt-3">
                   <div>
                     <label className="text-sm font-medium font-sans">
