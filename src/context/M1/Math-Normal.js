@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-export const EasyMath = [
+export const NormaMath1 = [
   {
     label: "Question 1",
     content: [
