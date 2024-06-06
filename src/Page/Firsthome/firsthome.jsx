@@ -9,8 +9,8 @@ const firsthome = () => {
   return (
     <main>
       <body>
-        <div className="grid grid-cols-2">
-          <div className="px-10 py-15">
+        <div className="grid md:grid-cols-[6fr_4fr] grid-cols-1 space-x-10 px-20">
+          <div className=" py-15">
             <h1 className="px-10 text-5xl mt-10 font-semibold font-serif">
               Motivation is what sets you in motion, habit is what keeps you
               going.
@@ -28,8 +28,8 @@ const firsthome = () => {
               </Link>
             </div>
           </div>
-          <div className="flex justify-center ">
-            <img src={Pichome} alt="" className="w-3/5" />
+          <div className="flex justify-start">
+            <img src={Pichome} alt="" className="w-4/5" />
           </div>
         </div>
       </body>
@@ -43,8 +43,8 @@ const firsthome = () => {
           illum sit tempora laborum eligendi optio praesentium eveniet, natus
           distinctio a, aspernatur maxime. Blanditiis, excepturi iusto!
         </div>
-        <div className="grid grid-cols-3 px-5 mt-5 ">
-          <div className="flex justify-end">
+        <div className="grid md:grid-cols-[4fr_4fr_4fr] grid-cols-3 mt-5">
+          <div className="flex justify-end ">
             <div className="border-4 rounded-md px-10 w-2/3 py-3">
               <div className="flex justify-center">
                 <img src={About2} alt="" className="w-2/5" />
@@ -80,7 +80,7 @@ const firsthome = () => {
         <div className="flex justify-center text-3xl mt-20 font-semibold font-serif">
           Contact
         </div>
-        <div className="grid grid-cols-3 px-5 mt-5 ">
+        <div className="grid md:grid-cols-[4fr_4fr_4fr] grid-cols-3 mt-5 ">
           <div className="flex justify-end">
             <div className="border-4 rounded-md px-10 w-2/3 py-3">
               <div className="flex justify-center">
