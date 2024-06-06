@@ -1,8 +1,55 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+import { useContext, useEffect, useState } from "react";
 import Bio from "../../assets/bio.png";
 import Chemi from "../../assets/chemi.png";
 import Math from "../../assets/math.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AxiosLib } from "../../lib/axiosLib";
+import { AuthContext } from "../../context/user";
+
 function play() {
+  const auth = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [grade, setGrade] = useState({
+    grade: "",
+    subject: "",
+    level: "",
+  });
+
+  const handleOnChange = (e) => {
+    const { name, value } = e.target;
+    setGrade((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleJoin = async (e) => {
+    e.preventDefault();
+    if (grade.grade === "" || grade.subject === "" || grade.level === "") {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Please select all the options",
+      });
+    }
+    try {
+      const response = await AxiosLib.post("/exam/exam", grade);
+      if (response.status === 200) {
+        navigate(`/testexam/${response.data._id}`);
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: error.response.data || "Something went wrong!",
+      });
+    }
+  };
+  useEffect(() => {
+    if (!auth.email) {
+      navigate("/login");
+    }
+  }, []);
+
   return (
     <main>
       <div className="flex justify-center mt-20">
@@ -14,14 +61,20 @@ function play() {
         <div>
           <div className="flex justify-end mt-9">
             <div className="inline-block relative w-64">
-              <select className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                <option>Grade</option>
-                <option>มัธยมศึกษาปีที่ 1</option>
-                <option>มัธยมศึกษาปีที่ 2</option>
-                <option>มัธยมศึกษาปีที่ 3</option>
-                <option>มัธยมศึกษาปีที่ 4</option>
-                <option>มัธยมศึกษาปีที่ 5</option>
-                <option>มัธยมศึกษาปีที่ 6</option>
+              <select
+                name="grade"
+                onChange={handleOnChange}
+                className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+              >
+                <option selected disabled>
+                  Grade
+                </option>
+                <option value="7">มัธยมศึกษาปีที่ 1</option>
+                <option value="8">มัธยมศึกษาปีที่ 2</option>
+                <option value="9">มัธยมศึกษาปีที่ 3</option>
+                <option value="10">มัธยมศึกษาปีที่ 4</option>
+                <option value="11">มัธยมศึกษาปีที่ 5</option>
+                <option value="12">มัธยมศึกษาปีที่ 6</option>
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <svg
@@ -39,12 +92,18 @@ function play() {
           <div>
             <div className="flex justify-center">
               <div className="inline-block relative w-64">
-                <select className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                  <option>Subject</option>
-                  <option>Mathematics</option>
-                  <option>Chemical</option>
-                  <option>Biology</option>
-                  <option>Physical</option>
+                <select
+                  name="subject"
+                  onChange={handleOnChange}
+                  className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+                >
+                  <option selected disabled>
+                    Subject
+                  </option>
+                  <option value="math">Mathematics</option>
+                  <option value="chem">Chemical</option>
+                  <option value="bio">Biology</option>
+                  <option value="phy">Physical</option>
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                   <svg
@@ -59,7 +118,10 @@ function play() {
             </div>
             <div className="flex justify-center mt-10">
               <Link to="/testexam">
-                <button className="rounded-full bg-[#FB6D48] px-10 py-2 text-white font-serif">
+                <button
+                  onClick={handleJoin}
+                  className="rounded-full bg-[#FB6D48] px-10 py-2 text-white font-serif"
+                >
                   Join
                 </button>
               </Link>
@@ -69,11 +131,17 @@ function play() {
         <div>
           <div className="flex justify-start mt-9">
             <div className="inline-block relative w-64">
-              <select className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                <option>Level</option>
-                <option>Easy</option>
-                <option>Normal</option>
-                <option>Diffucult</option>
+              <select
+                name="level"
+                onChange={handleOnChange}
+                className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+              >
+                <option selected disabled>
+                  Level
+                </option>
+                <option value="1">Easy</option>
+                <option value="2">Normal</option>
+                <option value="3">Diffucult</option>
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <svg
