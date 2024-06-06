@@ -3,9 +3,12 @@ import Pichome from "../../assets/Ani.gif";
 import About1 from "../../assets/about1.png";
 import About2 from "../../assets/about2.png";
 import About3 from "../../assets/about3.png";
+import { useContext } from "react";
+import { AuthContext } from "../../context/user";
 // import Pichome from "../../assets/Ani2.png";
 
 const firsthome = () => {
+  const auth = useContext(AuthContext);
   return (
     <main>
       <body>
@@ -21,11 +24,17 @@ const firsthome = () => {
               become a member with us.
             </h2>
             <div className="px-10">
-              <Link to="/SignUp">
-                <button className="mt-5 rounded-md bg-[#FB6D48] text-white w-[100px] h-[40px] font-serif">
-                  Sign Up
-                </button>
-              </Link>
+              {auth.email ? (
+                <div></div>
+              ) : (
+                <div>
+                  <Link to="/SignUp">
+                    <button className="mt-5 rounded-md bg-[#FB6D48] text-white w-[100px] h-[40px] font-serif">
+                      Sign Up
+                    </button>
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
           <div className="flex justify-center ">
