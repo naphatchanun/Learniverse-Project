@@ -29,7 +29,7 @@ export const NormalMath2 = [
     label: "Question 3",
     content: [
       {
-        question2:
+        question3:
           "ถ้าจำนวนเต็ม a หารด้วย 4 เหลือเศษ 1 เเละจำนวนเต็ม b หารด้วย 4 เหลือเศษ 3 เเล้ว a+b หารด้วย 4 จะเหลือเศษเท่าใด?",
         Ans1: "0"(true),
         Ans2: "1",
@@ -42,7 +42,7 @@ export const NormalMath2 = [
     label: "Question 4",
     content: [
       {
-        question2: "ถ้า y = 2x+1 เเล้ว y มีค่าเท่าใดเมื่อ x = 3?",
+        question4: "ถ้า y = 2x+1 เเล้ว y มีค่าเท่าใดเมื่อ x = 3?",
         Ans1: "10",
         Ans2: "9",
         Ans3: "8",
@@ -54,7 +54,7 @@ export const NormalMath2 = [
     label: "Question 5",
     content: [
       {
-        question2: "ถ้าจำนวนเต็ม k เป็นจำนวนเฉพาะ และ 2<k<10 จงหาค่า k",
+        question5: "ถ้าจำนวนเต็ม k เป็นจำนวนเฉพาะ และ 2<k<10 จงหาค่า k",
         Ans1: "5,3,7",
         Ans2: "3,5,7"(true),
         Ans3: "4,5,7",
