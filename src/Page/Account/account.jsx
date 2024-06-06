@@ -1,13 +1,14 @@
-import { Fragment, useState } from "react";
 import Modal from "../../component/Modal/Modal";
-import "boxicons";
+// import "boxicons";
 import EditExam from "../../component/Editexam/editexam";
+import PlayHistory from "../../component/PlayHistory/PlayHistory";
+import { useState } from "react";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
   const [showEditExam, setShowEditExam] = useState(false);
   return (
-    <Fragment>
+    <>
       <div className="p-10 text-center flex justify-center">
         <div className="grid md:grid-cols-[3fr_6fr] grid-cols-1 flex space-x-10">
           <div className="md:grid md:grid-cols-1 w-full  grid-cols-1">
@@ -37,6 +38,9 @@ export default function Home() {
             </div>
             <div className="border rounded-md w-[750px] px-3 h-auto mt-10">
               <h1 className="text-xl font-bold inderline mt-8">Play History</h1>
+              <div>
+                <PlayHistory />
+              </div>
             </div>
           </div>
         </div>
@@ -46,6 +50,6 @@ export default function Home() {
         isVisible={showEditExam}
         onClose={() => setShowEditExam(false)}
       />
-    </Fragment>
+    </>
   );
 }
