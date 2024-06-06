@@ -10,8 +10,9 @@ import Play from "./Page/Play/play";
 import Firsthome from "./Page/Firsthome/firsthome";
 import Login from "./Page/Login/login";
 import SignUp from "./Page/SignUp/SignUp";
-import Testexam from "./Page/Testexam/Testexam";
+import Testexam from "./Page/Testexam/testexam";
 import Account from "./Page/Account/account";
+import ExamResult from "./Page/ExamResult/ExamResult";
 
 import { AuthContext } from "./context/user";
 import { useCallback, useEffect, useState } from "react";
@@ -61,7 +62,8 @@ export const App = () => {
             <Route path="play" element={<Play />} />
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<SignUp />} />
-            <Route path="testexam" element={<Testexam />} />
+            <Route path="testexam/:examID" element={<Testexam />} />
+            <Route path="testexam/result/:examID" element={<ExamResult />} />
             <Route path="account" element={<Account />} />
           </Route>
         </Routes>
