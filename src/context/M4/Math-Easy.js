@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-export const DiffMath4 = [
+export const EasyMath4 = [
   [
     {
       _id: {
