@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-export const DiffMath3 = [
+export const DiffMath6 = [
   [
     {
       _id: {
