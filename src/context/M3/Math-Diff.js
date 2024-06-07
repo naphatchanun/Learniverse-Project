@@ -3,6 +3,9 @@ import { createContext } from "react";
 export const DiffMath3 = [
   [
     {
+      _id: {
+        $oid: "6661783a6ad4d74a56f03de7",
+      },
       label: "test1",
       grade: "9",
       subject: "math",
@@ -29,17 +32,17 @@ export const DiffMath3 = [
         {
           question: "จงหาค่า 4(x−1)=3x+5?",
           choice: [{ 1: "11" }, { 2: "9" }, { 3: "7" }, { 4: "5" }],
-          Answer: "2",
+          answer: "2",
         },
         {
           question: "ถ้าจำนวนเต็มบวก a+b หารด้วย 7 เหลือเศษเท่าใด?",
           choice: [{ 1: "0" }, { 2: "1" }, { 3: "2" }, { 4: "3" }],
-          Answer: "1",
+          answer: "1",
         },
         {
           question: "จงหาค่า 2x-3x+1 เมื่อ x = 5",
           choice: [{ 1: "5" }, { 2: "4" }, { 3: "-5" }, { 4: "-4" }],
-          Answer: "4",
+          answer: "4",
         },
       ],
     },

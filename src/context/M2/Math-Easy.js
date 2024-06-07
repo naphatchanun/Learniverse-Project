@@ -3,6 +3,9 @@ import { createContext } from "react";
 export const EasyMath2 = [
   [
     {
+      _id: {
+        $oid: "6661783a6ad4d74a56f03de7",
+      },
       label: "test1",
       grade: "8",
       subject: "math",
@@ -28,7 +31,7 @@ export const EasyMath2 = [
             { 3: "25.12 ซม." },
             { 4: "31.40 ซม." },
           ],
-          Answer: "4",
+          answer: "4",
         },
         {
           question:
@@ -39,12 +42,12 @@ export const EasyMath2 = [
             { 3: "36 ตร.ซม." },
             { 4: "42 ตร.ซม." },
           ],
-          Answer: "3",
+          answer: "3",
         },
         {
           question: "จงหาค่า 5a เมื่อ a = 7",
           choice: [{ 1: "20" }, { 2: "18" }, { 3: "16" }, { 4: "14" }],
-          Answer: "4",
+          answer: "4",
         },
       ],
     },

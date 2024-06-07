@@ -3,6 +3,9 @@ import { createContext } from "react";
 export const NormalMath2 = [
   [
     {
+      _id: {
+        $oid: "6661783a6ad4d74a56f03de7",
+      },
       label: "test1",
       grade: "8",
       subject: "math",
@@ -24,7 +27,7 @@ export const NormalMath2 = [
         {
           question: "ถ้า y = 2x+1 เเล้ว y มีค่าเท่าใดเมื่อ x = 3?",
           choice: [{ 1: "10" }, { 2: "9" }, { 3: "8" }, { 4: "7" }],
-          Answer: "4",
+          answer: "4",
         },
         {
           question: "ถ้าจำนวนเต็ม k เป็นจำนวนเฉพาะ และ 2<k<10 จงหาค่า k",
@@ -34,7 +37,7 @@ export const NormalMath2 = [
             { 3: "3,5,8" },
             { 4: "3,5,7" },
           ],
-          Answer: "3",
+          answer: "3",
         },
         {
           question: "จงหาผลบวกของมุมในของรูปสี่เหลี่ยม",
@@ -44,7 +47,7 @@ export const NormalMath2 = [
             { 3: "360 องศา" },
             { 4: "540 องศา" },
           ],
-          Answer: "3",
+          answer: "3",
         },
       ],
     },
