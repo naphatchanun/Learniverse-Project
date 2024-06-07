@@ -1,13 +1,23 @@
 import { Link } from "react-router-dom";
+import { Fragment, useState } from "react";
 import Pichome from "../../assets/Ani.gif";
 import About1 from "../../assets/about1.png";
 import About2 from "../../assets/about2.png";
 import About3 from "../../assets/about3.png";
+import Boss from "../../assets/Boss.jpg";
+import Member1 from "../../component/MemberCard/memberBoss";
+import Member2 from "../../component/MemberCard/memberHong";
+import Member3 from "../../component/MemberCard/memberNo";
+import Hong from "../../assets/Hong.jpg";
+import Ono from "../../assets/Ono.jpg";
 // import Pichome from "../../assets/Ani2.png";
 
-const firsthome = () => {
+export default function First() {
+  const [showMember1, setShowMember1] = useState(false);
+  const [showMember2, setShowMember2] = useState(false);
+  const [showMember3, setShowMember3] = useState(false);
   return (
-    <main>
+    <Fragment>
       <body>
         <div className="grid md:grid-cols-[6fr_4fr] grid-cols-1 space-x-10 px-20">
           <div className=" py-15">
@@ -45,7 +55,7 @@ const firsthome = () => {
         </div>
         <div className="grid md:grid-cols-[4fr_4fr_4fr] grid-cols-3 mt-5">
           <div className="flex justify-end ">
-            <div className="border-4 rounded-md px-10 w-2/3 py-3">
+            <div className="border-4 rounded-md px-10 w-2/3 py-3 shadow-lg transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 ">
               <div className="flex justify-center">
                 <img src={About2} alt="" className="w-2/5" />
               </div>
@@ -54,9 +64,9 @@ const firsthome = () => {
               </div>
             </div>
           </div>
-          <div className="flex justify-center">
-            <div className="border-4 rounded-md px-10 w-2/3 py-3">
-              <div className="flex justify-center">
+          <div className="flex justify-center ">
+            <div className="border-4 rounded-md px-10 w-2/3 py-3 shadow-lg transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">
+              <div className="flex justify-center ">
                 <img src={About1} alt="" className="w-2/5" />
               </div>
               <div className="flex justify-center text-center mt-3">
@@ -65,7 +75,7 @@ const firsthome = () => {
             </div>
           </div>
           <div className="flex justify-start">
-            <div className="border-4 rounded-md px-10 w-2/3 py-3">
+            <div className="border-4 rounded-md px-10 w-2/3 py-3 shadow-lg transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">
               <div className="flex justify-center">
                 <img src={About3} alt="" className="w-2/5" />
               </div>
@@ -82,39 +92,64 @@ const firsthome = () => {
         </div>
         <div className="grid md:grid-cols-[4fr_4fr_4fr] grid-cols-3 mt-5 ">
           <div className="flex justify-end">
-            <div className="border-4 rounded-md px-10 w-2/3 py-3">
-              <div className="flex justify-center">
-                <img src={About2} alt="" className="w-2/5" />
+            <div className="border-4 rounded-md px-10 w-2/3 py-3 shadow-lg ">
+              <div className="flex justify-center mt-5">
+                <img src={Boss} alt="" className="w-3/4 rounded-md" />
               </div>
-              <div className="flex justify-center text-center mt-3">
-                เสริมสร้างความรู้เเละทบทวนเนื้อหาทางการศึกษาผ่านเกม
+              <div className="flex justify-center text-center mt-3 text-md">
+                Witwisit Sorranawit
+                <br />
+                รหัสนักศึกษา:63090500434
               </div>
+              <h3
+                className="text-center mt-3 text-[#FB6D48] underline underline-offset-4 cursor-pointer font-semibold"
+                onClick={() => setShowMember1(true)}
+              >
+                ดูเพิ่มเติม
+              </h3>
             </div>
           </div>
           <div className="flex justify-center">
-            <div className="border-4 rounded-md px-10 w-2/3 py-3">
-              <div className="flex justify-center">
-                <img src={About1} alt="" className="w-2/5" />
+            <div className="border-4 rounded-md px-10 w-2/3 py-3 shadow-lg ">
+              <div className="flex justify-center mt-5">
+                <img src={Hong} alt="" className="w-3/4 rounded-md" />
               </div>
-              <div className="flex justify-center text-center mt-3">
-                วัดเเละประเมินการเรียนรู้ของตัวเอง
+              <div className="flex justify-center text-center mt-3 text-md">
+                Naphatchanun Suechey
+                <br />
+                รหัสนักศึกษา:65090500434
               </div>
+              <h3
+                className="text-center mt-3 text-[#FB6D48] underline underline-offset-4  cursor-pointer font-semibold"
+                onClick={() => setShowMember2(true)}
+              >
+                ดูเพิ่มเติม
+              </h3>
             </div>
           </div>
           <div className="flex justify-start">
-            <div className="border-4 rounded-md px-10 w-2/3 py-3">
-              <div className="flex justify-center">
-                <img src={About3} alt="" className="w-2/5" />
+            <div className="border-4 rounded-md px-10 w-2/3 py-3 shadow-lg ">
+              <div className="flex justify-center mt-5">
+                <img src={Ono} alt="" className="w-3/4 rounded-md" />
               </div>
-              <div className="flex justify-center text-center mt-3">
-                ส่งเสริมการเรียนรู้ด้วยการทำซ้ำ
+              <div className="flex justify-center text-center mt-3 text-md">
+                Santijit Kamnak
+                <br />
+                รหัสนักศึกษา:65090500457
               </div>
+              <h3
+                className="text-center mt-3 text-[#FB6D48] underline underline-offset-4 cursor-pointer font-semibold"
+                onClick={() => setShowMember3(true)}
+              >
+                ดูเพิ่มเติม
+              </h3>
             </div>
           </div>
         </div>
       </div>
-    </main>
+      <Member1 isVisible={showMember1} onClose={() => setShowMember1(false)} />
+      <Member2 isVisible={showMember2} onClose={() => setShowMember2(false)} />
+      <Member3 isVisible={showMember3} onClose={() => setShowMember3(false)} />
+    </Fragment>
   );
-};
-
-export default firsthome;
+}
