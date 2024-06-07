@@ -39,7 +39,7 @@ const login = () => {
                 <p className="text-black self-center flex gap-1 mt-4 font-serif">
                   Doesn&apos;t have an account yet?
                   <a
-                    className="text-[#FB6D48] underline font-sans "
+                    className="text-[#FB6D48] underline font-sans font-medium"
                     href="/SignUp"
                   >
                     Sign Up
