@@ -40,7 +40,7 @@ const Member1 = ({ isVisible, onClose }) => {
                     <br />
                     bosswts
                     <br />
-                    naphatchanun.suechey@gmail.com
+                    Witwisitboss@gmail.com
                     <br />
                     https://github.com/witwisit
                   </div>
