@@ -2,6 +2,7 @@ import { Fragment, useState } from "react";
 import Modal from "../../component/Modal/Modal";
 import "boxicons";
 import EditExam from "../../component/Editexam/editexam";
+import { Footer } from "../../component/Footer/footer";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
@@ -46,6 +47,7 @@ export default function Home() {
         isVisible={showEditExam}
         onClose={() => setShowEditExam(false)}
       />
+      <Footer />
     </Fragment>
   );
 }

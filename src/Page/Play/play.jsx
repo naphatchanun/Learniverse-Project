@@ -2,6 +2,7 @@ import Bio from "../../assets/bio.png";
 import Chemi from "../../assets/chemi.png";
 import Math from "../../assets/math.png";
 import { Link } from "react-router-dom";
+import { Footer } from "../../component/Footer/footer";
 function play() {
   return (
     <main>
@@ -199,6 +200,7 @@ function play() {
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
