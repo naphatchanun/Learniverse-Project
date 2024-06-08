@@ -29,8 +29,19 @@ const PlayHistory = () => {
     <main>
       {histories.map((item, index) => {
         return (
-          <div className="grid" key={index}>
-            <div>{item.examID.label}</div>
+          <div
+            className="grid md:grid-cols-[3fr_3fr_3fr] grid-cols-3 space-x-3"
+            key={index}
+          >
+            <div className="flex justify-center rounded-md bg-gray-200 px-2 py-2 mt-2">
+              {item.examID.label}
+            </div>
+            <div className="flex justify-center rounded-md bg-gray-200 px-2 py-2 mt-2">
+              {item.examID.subject}
+            </div>
+            <div className="flex justify-center rounded-md bg-gray-200 px-2 py-2 mt-2">
+              {item.examID.level}
+            </div>
           </div>
         );
       })}

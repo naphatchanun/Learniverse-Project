@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import Pichome from "../../assets/Ani.gif";
 import About1 from "../../assets/about1.png";
 import About2 from "../../assets/about2.png";
@@ -160,11 +160,7 @@ export default function First() {
       <Member1 isVisible={showMember1} onClose={() => setShowMember1(false)} />
       <Member2 isVisible={showMember2} onClose={() => setShowMember2(false)} />
       <Member3 isVisible={showMember3} onClose={() => setShowMember3(false)} />
-<<<<<<< HEAD
-    </>
-=======
       <Footer />
-    </Fragment>
->>>>>>> 48e4353e50319f555f124560cbe1b3a609ac6cf7
+    </>
   );
 }

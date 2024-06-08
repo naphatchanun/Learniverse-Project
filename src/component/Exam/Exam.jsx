@@ -19,11 +19,11 @@ const Exam = (props) => {
         current === currentItem ? "block" : "hidden"
       }`}
     >
-      <h1>{question}</h1>
+      <h1 className="text-lg  mt-10">{question}</h1>
       <div>
         {choice.map((item, index) => {
           return (
-            <div key={index}>
+            <div key={index} className="mt-3">
               <input
                 type="radio"
                 name={currentItem}
@@ -38,12 +38,27 @@ const Exam = (props) => {
           );
         })}
       </div>
-      <div>
-        <button onClick={handleBack}>Back</button>
+      <div className="flex justify-center mt-5 space-x-5">
+        <button
+          onClick={handleBack}
+          className="bg-gray-200 rounded-full px-4 py-1"
+        >
+          Back
+        </button>
         {currentItem === examLength - 1 ? (
-          <button onClick={handleSubmit}>Submit</button>
+          <button
+            onClick={handleSubmit}
+            className="bg-[#FB6D48] rounded-full px-4 py-1 text-white"
+          >
+            Submit
+          </button>
         ) : (
-          <button onClick={handleNext}>Next</button>
+          <button
+            onClick={handleNext}
+            className="bg-[#FB6D48] rounded-full px-4 py-1 text-white"
+          >
+            Next
+          </button>
         )}
       </div>
     </main>

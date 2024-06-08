@@ -38,7 +38,14 @@ export default function Home() {
               </div>
             </div>
             <div className="border rounded-md w-[750px] px-3 h-auto mt-10">
-              <h1 className="text-xl font-bold inderline mt-8">Play History</h1>
+              <h1 className="text-2xl font-bold inderline mt-8">
+                Play History
+              </h1>
+              <div className="grid md:grid-cols-[3fr_3fr_3fr] grid-cols-3 flex space-x-3 mt-5">
+                <h1 className="text-[#FB6D48] text-lg font-bold">Exam</h1>
+                <h1 className="text-[#FB6D48] text-lg font-bold">Subject</h1>
+                <h1 className="text-[#FB6D48] text-lg font-bold">Level</h1>
+              </div>
               <div>
                 <PlayHistory />
               </div>
@@ -51,11 +58,7 @@ export default function Home() {
         isVisible={showEditExam}
         onClose={() => setShowEditExam(false)}
       />
-<<<<<<< HEAD
-    </>
-=======
       <Footer />
-    </Fragment>
->>>>>>> 48e4353e50319f555f124560cbe1b3a609ac6cf7
+    </>
   );
 }

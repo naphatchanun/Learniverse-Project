@@ -96,22 +96,24 @@ const Testexam = () => {
 
   return (
     <main className="flex justify-center mt-20">
-      {exam.map((item, index) => {
-        return (
-          <Exam
-            key={index}
-            item={item}
-            current={current}
-            currentItem={index}
-            currentAnswer={currentAnswer}
-            examLength={exam.length}
-            handleNext={handleNext}
-            handleBack={handleBack}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
-          />
-        );
-      })}
+      <div className="rounded-md shadow-xl w-[600px] h-[350px] px-10">
+        {exam.map((item, index) => {
+          return (
+            <Exam
+              key={index}
+              item={item}
+              current={current}
+              currentItem={index}
+              currentAnswer={currentAnswer}
+              examLength={exam.length}
+              handleNext={handleNext}
+              handleBack={handleBack}
+              handleChange={handleChange}
+              handleSubmit={handleSubmit}
+            />
+          );
+        })}
+      </div>
     </main>
   );
 };
