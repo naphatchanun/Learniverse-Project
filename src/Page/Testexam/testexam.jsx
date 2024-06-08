@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../context/user";
 import { calcurateScore } from "../../util/calcurateScore";
+// import About1 from "../../assets/about1.png";
 
 const Testexam = () => {
   const auth = useContext(AuthContext);
@@ -95,25 +96,67 @@ const Testexam = () => {
   }, []);
 
   return (
-    <main className="flex justify-center mt-20">
-      <div className="rounded-md shadow-xl w-[600px] h-[350px] px-10">
-        {exam.map((item, index) => {
-          return (
-            <Exam
-              key={index}
-              item={item}
-              current={current}
-              currentItem={index}
-              currentAnswer={currentAnswer}
-              examLength={exam.length}
-              handleNext={handleNext}
-              handleBack={handleBack}
-              handleChange={handleChange}
-              handleSubmit={handleSubmit}
-            />
-          );
-        })}
+    <main>
+      <div className="bg-[#FBF3D5] h-screen">
+        <div className="flex justify-center py-20 ">
+          <div className="rounded-md border-2 shadow-xl w-[800px] h-[350px] px-10 bg-white">
+            {exam.map((item, index) => {
+              return (
+                <Exam
+                  key={index}
+                  item={item}
+                  current={current}
+                  currentItem={index}
+                  currentAnswer={currentAnswer}
+                  examLength={exam.length}
+                  handleNext={handleNext}
+                  handleBack={handleBack}
+                  handleChange={handleChange}
+                  handleSubmit={handleSubmit}
+                />
+              );
+            })}
+          </div>
+        </div>
+        {/* <div className="grid md:grid-cols-[4fr_4fr_4fr] grid-col-3">
+          <div className="flex justify-center">
+            <img src={About1} alt="" className="w-36" />
+          </div>
+          <div className="flex justify-center">
+            <img src={About1} alt="" className="w-36" />
+          </div>
+          <div className="flex justify-center">
+            <img src={About1} alt="" className="w-36" />
+          </div>
+        </div> */}
       </div>
+      {/* <div className="bg-[#] mt-20">
+        <div className="grid md:grid-cols-[4fr_4fr] grid-cols- mt-10">
+          <div className="flex justify-end items-center">
+            <div className="border-4 rounded-md bg-white px-10 w-2/3 py-3 shadow-lg">
+              <div className="flex justify-center"></div>
+              <h1 className="flex justify-center text-center mt-3">
+                คณิตศาสตร์
+              </h1>
+              <h1 className="flex justify-center text-center mt-3">
+                เป็นวิชาที่ศึกษาเกี่ยวกับจำนวน โครงสร้าง รูปทรง
+                และการเปลี่ยนแปลง
+                โดยเป็นศาสตร์ที่เกี่ยวข้องกับการหากฎเกณฑ์และรูปแบบต่าง ๆ
+                ในเชิงปริมาณและเชิงคุณภาพ หลักการพื้นฐานในคณิตศาสตร์ได้แก่
+                การบวก การลบ การคูณ การหาร
+              </h1>
+            </div>
+          </div>
+          <div className="flex justify-start ">
+            <div className="border-4 rounded-md bg-white px-10 w-2/3 py-3 shadow-lg">
+              <div className="flex justify-center "></div>
+              <div className="flex justify-center text-center mt-3">
+                วัดเเละประเมินการเรียนรู้ของตัวเอง
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> */}
     </main>
   );
 };
@@ -121,43 +164,45 @@ const Testexam = () => {
 export default Testexam;
 
 // CSS อันเก่า
-// <div key={index} className="flex justify-center mt-20">
-//   <div className="border-4 rounded-md border-[#FB6D48] w-auto h-auto">
-//     <h1 className="flex justify-center font-semibold text-xl mt-3 font-serif">
-//       Question 1
-//     </h1>
-//     <h2 className="mt-7 px-10 text-lg ">{item.question}</h2>
-//     <div className="px-10 mt-5 py-3">
-//       <div className="border rounded-md bg-[#FBF3D5] w-auto h-8 px-3 text-sm hover:border-[#FB6D48] border-2">
-//         1.{item.choice[0]}
-//       </div>
-//       <div className="border rounded-md bg-[#FBF3D5] w-auto h-8 px-3 mt-3 text-sm hover:border-[#FB6D48] border-2">
-//         2.{item.choice[1]}
-//       </div>
-//       <div className="border rounded-md bg-[#FBF3D5] w-auto h-8 px-3 mt-3 text-sm hover:border-[#FB6D48] border-2">
-//         3.{item.choice[2]}
-//       </div>
-//       <div className="border rounded-md bg-[#FBF3D5] w-auto h-8 px-3 mt-3 text-sm hover:border-[#FB6D48] border-2">
-//         4.{item.choice[3]}
-//       </div>
-//     </div>
-// <div className="grid grid-cols-2 py-3">
-//   <div className="flex justify-end">
-//     <button
-//       onClick={handleBack}
-//       className="rounded-full bg-[#DDDDDD] px-5 py-2 text-white "
-//     >
-//       Back
-//     </button>
-//   </div>
-//   <div className="flex justify-start px-2">
-//     <button
-//       onClick={handleNext}
-//       className="rounded-full bg-[#FB6D48] px-5 py-2 text-white"
-//     >
-//       Next
-//     </button>
-//   </div>
-// </div>
-//   </div>
-// </div>
+{
+  /* <div key={index} className="flex justify-center mt-20">
+  <div className="border-4 rounded-md border-[#FB6D48] w-auto h-auto">
+    <h1 className="flex justify-center font-semibold text-xl mt-3 font-serif">
+      Question 1
+    </h1>
+    <h2 className="mt-7 px-10 text-lg ">{item.question}</h2>
+    <div className="px-10 mt-5 py-3">
+      <div className="border rounded-md bg-[#FBF3D5] w-auto h-8 px-3 text-sm hover:border-[#FB6D48] border-2">
+        1.{item.choice[0]}
+      </div>
+      <div className="border rounded-md bg-[#FBF3D5] w-auto h-8 px-3 mt-3 text-sm hover:border-[#FB6D48] border-2">
+        2.{item.choice[1]}
+      </div>
+      <div className="border rounded-md bg-[#FBF3D5] w-auto h-8 px-3 mt-3 text-sm hover:border-[#FB6D48] border-2">
+        3.{item.choice[2]}
+      </div>
+      <div className="border rounded-md bg-[#FBF3D5] w-auto h-8 px-3 mt-3 text-sm hover:border-[#FB6D48] border-2">
+        4.{item.choice[3]}
+      </div>
+    </div>
+<div className="grid grid-cols-2 py-3">
+  <div className="flex justify-end">
+    <button
+      onClick={handleBack}
+      className="rounded-full bg-[#DDDDDD] px-5 py-2 text-white "
+    >
+      Back
+    </button>
+  </div>
+  <div className="flex justify-start px-2">
+    <button
+      onClick={handleNext}
+      className="rounded-full bg-[#FB6D48] px-5 py-2 text-white"
+    >
+      Next
+    </button>
+  </div>
+</div>
+  </div>
+</div> */
+}
