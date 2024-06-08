@@ -1,5 +1,5 @@
-import Contact from "../../assets/contact1.png";
-import picture from "../../assets/contact1.png";
+// import Contact from "../../assets/contact1.png";
+// import picture from "../../assets/contact1.png";
 
 const contact = () => {
   return (

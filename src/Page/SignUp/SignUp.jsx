@@ -47,7 +47,7 @@ const SignUp = () => {
                     </label>
                     <input
                       name="firstName"
-                      className="mt-1 block w-full px-5 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
+                      className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
                   disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
                       placeholder="Enter your Firstname"
                     />
@@ -87,7 +87,7 @@ const SignUp = () => {
                       placeholder="************"
                     />
                   </div>
-                  <div className="mt-2">
+                  {/* <div className="mt-2">
                     <label className="text-sm font-medium font-sans">
                       Phone
                     </label>
@@ -98,7 +98,7 @@ const SignUp = () => {
                   disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
                       placeholder="XXX-XXXXXXX"
                     />
-                  </div>
+                  </div> */}
                   <div className="py-3 mt-2">
                     <button className="rounded-md bg-[#FB6D48] px-10 py-2 text-white font-sans w-full">
                       Sign Up
@@ -117,7 +117,7 @@ const SignUp = () => {
         </div>
         <div className="flex justify-center">
           <div className="flex justify-center items-center">
-            <img src={Sign} alt="" className="w-[500px] h-[450px]" />
+            <img src={Sign} alt="" className="w-[450px] h-[450px]" />
           </div>
         </div>
       </div>

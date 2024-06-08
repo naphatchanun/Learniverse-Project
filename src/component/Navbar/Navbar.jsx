@@ -20,13 +20,13 @@ function Navbar() {
   return (
     <nav className="bg-[#FB6D48] ">
       <div className="flex justify-between items-ceneter w-[92%]">
-        <div className="px-20">
+        <div className="px-28">
           <Link
             to="/"
             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
             aria-current="page"
           >
-            <img src={Logo} alt="" className="w-[100px]" />
+            <img src={Logo} alt="" className="w-28" />
           </Link>
         </div>
         <div className="flex justify-center">

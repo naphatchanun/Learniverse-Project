@@ -28,7 +28,7 @@ const login = () => {
       onSubmit={onFormSubmit}
       className="flex justify-center "
     >
-      <div className="grid grid-cols-2 mt-20">
+      <div className="grid grid-cols-2 mt-10">
         <div className="flex justify-center">
           <div className="flex justify-items-center px-20">
             <div className="rounded-md border-2 shadow-2xl w-[350px]">
@@ -39,7 +39,7 @@ const login = () => {
                 <p className="text-black self-center flex gap-1 mt-4 font-serif">
                   Doesn&apos;t have an account yet?
                   <a
-                    className="text-[#FB6D48] underline font-sans "
+                    className="text-[#FB6D48] underline font-sans font-medium"
                     href="/SignUp"
                   >
                     Sign Up
