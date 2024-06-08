@@ -12,6 +12,7 @@ import Hong from "../../assets/Hong.jpg";
 import Ono from "../../assets/Ono.jpg";
 import { useContext } from "react";
 import { AuthContext } from "../../context/user";
+import { Footer } from "../../component/Footer/footer";
 // import Pichome from "../../assets/Ani2.png";
 
 export default function First() {
@@ -105,7 +106,7 @@ export default function First() {
               <div className="flex justify-center mt-5">
                 <img src={Boss} alt="" className="w-3/4 rounded-md" />
               </div>
-              <div className="flex justify-center text-center mt-3 text-md">
+              <div className="flex justify-center text-center mt-3 text-md font-bold">
                 Witwisit Sorranawit
                 <br />
                 รหัสนักศึกษา:63090500434
@@ -123,7 +124,7 @@ export default function First() {
               <div className="flex justify-center mt-5">
                 <img src={Hong} alt="" className="w-3/4 rounded-md" />
               </div>
-              <div className="flex justify-center text-center mt-3 text-md">
+              <div className="flex justify-center text-center mt-3 text-md font-bold">
                 Naphatchanun Suechey
                 <br />
                 รหัสนักศึกษา:65090500434
@@ -141,7 +142,7 @@ export default function First() {
               <div className="flex justify-center mt-5">
                 <img src={Ono} alt="" className="w-3/4 rounded-md" />
               </div>
-              <div className="flex justify-center text-center mt-3 text-md">
+              <div className="flex justify-center text-center mt-3 text-md font-bold">
                 Santijit Kamnak
                 <br />
                 รหัสนักศึกษา:65090500457
@@ -159,6 +160,11 @@ export default function First() {
       <Member1 isVisible={showMember1} onClose={() => setShowMember1(false)} />
       <Member2 isVisible={showMember2} onClose={() => setShowMember2(false)} />
       <Member3 isVisible={showMember3} onClose={() => setShowMember3(false)} />
+<<<<<<< HEAD
     </>
+=======
+      <Footer />
+    </Fragment>
+>>>>>>> 48e4353e50319f555f124560cbe1b3a609ac6cf7
   );
 }

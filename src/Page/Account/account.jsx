@@ -3,6 +3,7 @@ import Modal from "../../component/Modal/Modal";
 import EditExam from "../../component/Editexam/editexam";
 import PlayHistory from "../../component/PlayHistory/PlayHistory";
 import { useState } from "react";
+import { Footer } from "../../component/Footer/footer";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
@@ -50,6 +51,11 @@ export default function Home() {
         isVisible={showEditExam}
         onClose={() => setShowEditExam(false)}
       />
+<<<<<<< HEAD
     </>
+=======
+      <Footer />
+    </Fragment>
+>>>>>>> 48e4353e50319f555f124560cbe1b3a609ac6cf7
   );
 }

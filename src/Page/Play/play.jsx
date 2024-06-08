@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 import { AxiosLib } from "../../lib/axiosLib";
 import { AuthContext } from "../../context/user";
 
+import { Footer } from "../../component/Footer/footer";
 function play() {
   const auth = useContext(AuthContext);
   const navigate = useNavigate();
@@ -267,6 +268,7 @@ function play() {
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
