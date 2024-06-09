@@ -17,6 +17,7 @@ const Create = () => {
     totalmark: "",
     duration: "",
     createBy: auth.displayName,
+    userID: auth.userId,
     content: [],
   });
   const [numberArray, setNumberArray] = useState([]);
@@ -70,6 +71,7 @@ const Create = () => {
 
   useEffect(() => {
     setPayload({ ...payload, createBy: auth.displayName });
+    setPayload({ ...payload, userID: auth.userId });
   }, [auth]);
   return (
     <>
