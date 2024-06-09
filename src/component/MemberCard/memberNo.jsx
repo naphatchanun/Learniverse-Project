@@ -1,4 +1,5 @@
 import React from "react";
+import "boxicons";
 
 const Member3 = ({ isVisible, onClose }) => {
   if (!isVisible) return null;
@@ -25,24 +26,32 @@ const Member3 = ({ isVisible, onClose }) => {
                 </button>
               </div>
               <div className="px-1.5 flex space-x-4 py-1.5">
-                <div className="grid md:grid-cols-[3fr_6fr] grid-cols-1">
-                  <div className="flex justify-start font-semibold">
-                    Facebook:
-                    <br />
-                    Instagram:
-                    <br />
-                    Gmail:
-                    <br />
-                    Github:
+                <div className="grid md:grid-cols-[1fr_3fr_6fr] grid-cols-1">
+                  <div>
+                    <box-icon
+                      type="logo"
+                      name="facebook-square"
+                      color="blue"
+                    ></box-icon>
+                    <box-icon type="logo" name="instagram"></box-icon>
+                    <box-icon name="gmail" type="logo" color="red"></box-icon>
+                    <box-icon name="github" type="logo"></box-icon>
+                  </div>
+                  <div className="flex justify-start font-semibold px-2">
+                    <div>
+                      <h1>Facbook:</h1>
+                      <h1 className="mt-1">Instagram:</h1>
+                      <h1 className="mt-2">Gmail:</h1>
+                      <h1 className="mt-1.5">Github:</h1>
+                    </div>
                   </div>
                   <div className="flex justify-start ">
-                    Santijit Kamnak
-                    <br />
-                    onosannnnt
-                    <br />
-                    Onopingping@gmaill.com
-                    <br />
-                    https://github.com/Oceannnx
+                    <div>
+                      <h1>Santijit Kamnak</h1>
+                      <h1 className="mt-1">onosannnnt</h1>
+                      <h1 className="mt-2">Onopingping@gmaill.com</h1>
+                      <h1 className="mt-1.5">https://github.com/Oceannnx</h1>
+                    </div>
                   </div>
                 </div>
               </div>

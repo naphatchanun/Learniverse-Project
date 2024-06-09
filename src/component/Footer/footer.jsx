@@ -23,19 +23,19 @@ export const Footer = () => {
                   }}
                 >
                   Main menu
-                  <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
+                  <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#FBF3D5]"></span>
                 </h1>
               </Link>
               <Link to="/Create">
-                <li className="group transition duration-300 w-fit">
+                <li className="group transition duration-300 w-fit text-white">
                   Create
-                  <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
+                  <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#FBF3D5]"></span>
                 </li>
               </Link>
               <Link to="/play">
-                <li className="group transition duration-300 w-fit">
+                <li className="group transition duration-300 w-fit text-white">
                   Play
-                  <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
+                  <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#FBF3D5]"></span>
                 </li>
               </Link>
             </ul>
@@ -43,22 +43,22 @@ export const Footer = () => {
 
           <div className="flex my-4 justify-center items-center">
             <ul>
-              <h1 className="font-bold text-lg">Subject</h1>
-              <li className="group transition duration-300 w-fit">
-                คณิตศาสตร์
-                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
+              <h1 className="font-bold text-lg ">Subject</h1>
+              <li className="group transition duration-300 w-fit text-white">
+                Mathematics
+                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#FBF3D5]"></span>
               </li>
-              <li className="group transition duration-300 w-fit">
-                ชีวะวิทยา
-                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
+              <li className="group transition duration-300 w-fit text-white">
+                Biology
+                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#FBF3D5]"></span>
               </li>
-              <li className="group transition duration-300 w-fit">
-                เคมี
-                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
+              <li className="group transition duration-300 w-fit text-white">
+                Chemical
+                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#FBF3D5]"></span>
               </li>
-              <li className="group transition duration-300 w-fit">
-                ฟิสิกส์
-                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
+              <li className="group transition duration-300 w-fit text-white">
+                Physics
+                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#FBF3D5]"></span>
               </li>
             </ul>
           </div>
