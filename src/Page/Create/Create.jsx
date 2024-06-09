@@ -88,7 +88,7 @@ const Create = () => {
                 type="text"
                 id="label"
                 value={payload.label}
-                className="border-2 border-gray-300 rounded-md w-80 h-8 py-2 px-2"
+                className="border-2 border-gray-300 rounded-md w-80 h-8 py-3 px-2"
                 onChange={handleChange}
                 placeholder="Enter the name you want to set."
               />
@@ -200,19 +200,19 @@ const Create = () => {
                 onChange={handleChange}
               />
             </div>
-            <div>
+            <div className="flex justify-center mt-3">
               {numberArray.map((_, index) => {
                 return (
-                  <div key={index}>
+                  <div key={index} className="mt-3">
                     <label htmlFor={`question${index}`}>
-                      Question {index + 1}
+                      Question: {index + 1}
                     </label>
                     <input
                       type="text"
                       id={`question${index}`}
                       required
                       placeholder="What do you want to ask?"
-                      className="border border-gray-300 rounded-md p-2 w-80"
+                      className="border border-gray-300 rounded-md py-1 px-2  w-80"
                       onChange={(e) => {
                         const content = [...payload.content];
                         content[index] = {
@@ -227,16 +227,19 @@ const Create = () => {
                       .fill(1)
                       .map((_, choiceIndex) => {
                         return (
-                          <div key={choiceIndex}>
-                            <label htmlFor={`choice${index}${choiceIndex}`}>
-                              Choice {choiceIndex + 1}
+                          <div key={choiceIndex} className="mt-3 ">
+                            <label
+                              htmlFor={`choice${index}${choiceIndex}`}
+                              className="px-2"
+                            >
+                              Choice: {choiceIndex + 1}
                             </label>
                             <input
                               type="text"
                               required
                               id={`choice${index}${choiceIndex}`}
                               placeholder={`Choice ${choiceIndex + 1}`}
-                              className="border border-gray-300 rounded-md p-2 w-80"
+                              className="border border-gray-300 rounded-md py-1 px-2  w-80"
                               onChange={(e) => {
                                 const content = [...payload.content];
                                 content[index].choice[choiceIndex] = {
@@ -248,7 +251,9 @@ const Create = () => {
                           </div>
                         );
                       })}
-                    <label htmlFor={`answer`}>Answer</label>
+                    <label htmlFor={`answer`} className="px-3">
+                      Answer:
+                    </label>
                     <input
                       type="number"
                       id={`answer`}
@@ -256,7 +261,7 @@ const Create = () => {
                       min={1}
                       max={4}
                       placeholder="1-4"
-                      className="border border-gray-300 rounded-md p-2 w-80"
+                      className="border border-gray-300 rounded-md py-1 px-2 my-3 w-80"
                       onChange={(e) => {
                         const content = [...payload.content];
                         content[index].answer = e.target.value;
