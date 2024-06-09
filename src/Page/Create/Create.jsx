@@ -78,174 +78,204 @@ const Create = () => {
           className="flex flex-col items-center justify-center h-full"
           onSubmit={handleSubmit}
         >
-          <h1 className="text-4xl font-bold">Create</h1>
-          <div>
-            <label htmlFor="label">Exam name</label>
-            <input
-              type="text"
-              id="label"
-              value={payload.label}
-              className="border border-gray-300 rounded-md p-2 w-80"
-              onChange={handleChange}
-              placeholder="Nextjs for 3 year old  kid 101"
-            />
-          </div>
-          <div>
-            <label htmlFor="grade">Grade</label>
-            <select onChange={handleChange} id="grade">
-              <option disabled selected>
-                Select Grade
-              </option>
-              {GradeContext.map((grade) => {
-                return (
-                  <option key={grade} value={grade}>
-                    Secondary {grade - 6}
+          <div className="rounded-md bg-gray-100 mt-10 px-10 shadow-lg">
+            <h1 className="text-4xl font-bold mt-3 text-center">Create</h1>
+            <div className="mt-5 shadow-xl h-10 w-30 px-3">
+              <label htmlFor="label" className="px-3 text-lg">
+                Exam name:
+              </label>
+              <input
+                type="text"
+                id="label"
+                value={payload.label}
+                className="border-2 border-gray-300 rounded-md w-80 h-8 py-2 px-2"
+                onChange={handleChange}
+                placeholder="Enter the name you want to set."
+              />
+            </div>
+            <div>
+              <div className="mt-5 shadow-xl h-10 w-30">
+                <label htmlFor="grade" className="px-10 text-lg">
+                  Grade:
+                </label>
+                <select
+                  onChange={handleChange}
+                  id="grade"
+                  className="rounded-md py-1 px-2 border-2 border-gray-300 "
+                >
+                  <option disabled selected>
+                    Select Grade
                   </option>
+                  {GradeContext.map((grade) => {
+                    return (
+                      <option key={grade} value={grade}>
+                        Secondary {grade - 6}
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
+              <div className="mt-5 shadow-xl h-10 w-30">
+                <label htmlFor="subject" className="px-9 text-lg">
+                  Subject:
+                </label>
+                <select
+                  id="subject"
+                  onChange={handleChange}
+                  className="rounded-md py-1 px-2 border-2 border-gray-300 "
+                >
+                  <option disabled selected>
+                    Select Subject
+                  </option>
+                  {SubjectContext.map((subject) => {
+                    return (
+                      <option key={subject.id} value={subject.name}>
+                        {subject.label}
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
+              <div className="mt-5 shadow-xl h-10 w-30">
+                <label htmlFor="level" className="px-11 text-lg">
+                  Level:
+                </label>
+                <select
+                  onChange={handleChange}
+                  id="level"
+                  className="rounded-md py-1 px-2 border-2 border-gray-300 "
+                >
+                  <option disabled selected>
+                    Select Level
+                  </option>
+                  {LevelContext.map((level) => {
+                    return (
+                      <option key={level.id} value={level.name}>
+                        {level.label}
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
+            </div>
+            <div className="flex justify-start items-center mt-5 shadow-xl h-10 w-30 ">
+              <label className="px-7 text-lg">Duration:</label>
+              <input
+                type="number"
+                min={0}
+                id="duration"
+                value={duration.hour}
+                className="border-2 border-gray-300 rounded-md py-1 px-2 p-2 w-20"
+                onChange={(e) => {
+                  setDuration({ ...duration, hour: e.target.value });
+                }}
+              />
+              <label htmlFor="duration" className="px-1 text-lg">
+                Hour
+              </label>
+              <input
+                type="number"
+                min={0}
+                id="duration"
+                value={duration.minute}
+                className="border-2 border-gray-300 rounded-md py-1 px-2 w-20"
+                onChange={(e) => {
+                  setDuration({ ...duration, minute: e.target.value });
+                }}
+              />
+              <label className="px-1 text-lg">Minute</label>
+            </div>
+            <div className="mt-5 shadow-xl h-10 w-30">
+              <label htmlFor="totalmark" className="px-3 text-lg">
+                Number of items:
+              </label>
+              <input
+                type="number"
+                min={1}
+                required
+                id="totalmark"
+                placeholder="1-100"
+                value={payload.totalmark}
+                className="border-2 border-gray-300 rounded-md py-1 px-2 p-2 w-20"
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              {numberArray.map((_, index) => {
+                return (
+                  <div key={index}>
+                    <label htmlFor={`question${index}`}>
+                      Question {index + 1}
+                    </label>
+                    <input
+                      type="text"
+                      id={`question${index}`}
+                      required
+                      placeholder="What do you want to ask?"
+                      className="border border-gray-300 rounded-md p-2 w-80"
+                      onChange={(e) => {
+                        const content = [...payload.content];
+                        content[index] = {
+                          question: e.target.value,
+                          choice: [],
+                          answer: "",
+                        };
+                        setPayload({ ...payload, content });
+                      }}
+                    />
+                    {Array(4)
+                      .fill(1)
+                      .map((_, choiceIndex) => {
+                        return (
+                          <div key={choiceIndex}>
+                            <label htmlFor={`choice${index}${choiceIndex}`}>
+                              Choice {choiceIndex + 1}
+                            </label>
+                            <input
+                              type="text"
+                              required
+                              id={`choice${index}${choiceIndex}`}
+                              placeholder={`Choice ${choiceIndex + 1}`}
+                              className="border border-gray-300 rounded-md p-2 w-80"
+                              onChange={(e) => {
+                                const content = [...payload.content];
+                                content[index].choice[choiceIndex] = {
+                                  [choiceIndex + 1]: e.target.value,
+                                };
+                                setPayload({ ...payload, content });
+                              }}
+                            />
+                          </div>
+                        );
+                      })}
+                    <label htmlFor={`answer`}>Answer</label>
+                    <input
+                      type="number"
+                      id={`answer`}
+                      required
+                      min={1}
+                      max={4}
+                      placeholder="1-4"
+                      className="border border-gray-300 rounded-md p-2 w-80"
+                      onChange={(e) => {
+                        const content = [...payload.content];
+                        content[index].answer = e.target.value;
+                        setPayload({ ...payload, content });
+                      }}
+                    />
+                  </div>
                 );
               })}
-            </select>
+            </div>
+            <div className="flex justify-center mt-5 py-5">
+              <button
+                className="bg-[#FB6D48] text-white p-2 rounded-md w-80"
+                type="submit"
+              >
+                Create
+              </button>
+            </div>
           </div>
-          <div>
-            <label htmlFor="subject">Subject</label>
-            <select id="subject" onChange={handleChange}>
-              <option disabled selected>
-                Select Subject
-              </option>
-              {SubjectContext.map((subject) => {
-                return (
-                  <option key={subject.id} value={subject.name}>
-                    {subject.label}
-                  </option>
-                );
-              })}
-            </select>
-          </div>
-          <div>
-            <label htmlFor="level">Level</label>
-            <select onChange={handleChange} id="level">
-              <option disabled selected>
-                Select Level
-              </option>
-              {LevelContext.map((level) => {
-                return (
-                  <option key={level.id} value={level.name}>
-                    {level.label}
-                  </option>
-                );
-              })}
-            </select>
-          </div>
-          <div className="flex justify-start items-center">
-            <label>Duration</label>
-            <input
-              type="number"
-              min={0}
-              id="duration"
-              value={duration.hour}
-              className="border border-gray-300 rounded-md p-2 w-20"
-              onChange={(e) => {
-                setDuration({ ...duration, hour: e.target.value });
-              }}
-            />
-            <label htmlFor="duration">Hour</label>
-            <input
-              type="number"
-              min={0}
-              id="duration"
-              value={duration.minute}
-              className="border border-gray-300 rounded-md p-2 w-20"
-              onChange={(e) => {
-                setDuration({ ...duration, minute: e.target.value });
-              }}
-            />
-            <label>Minute</label>
-          </div>
-          <div>
-            <label htmlFor="totalmark">Number of items</label>
-            <input
-              type="number"
-              min={1}
-              required
-              id="totalmark"
-              placeholder="1-100"
-              value={payload.totalmark}
-              className="border border-gray-300 rounded-md p-2 w-20"
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            {numberArray.map((_, index) => {
-              return (
-                <div key={index}>
-                  <label htmlFor={`question${index}`}>
-                    Question {index + 1}
-                  </label>
-                  <input
-                    type="text"
-                    id={`question${index}`}
-                    required
-                    placeholder="What do you want to ask?"
-                    className="border border-gray-300 rounded-md p-2 w-80"
-                    onChange={(e) => {
-                      const content = [...payload.content];
-                      content[index] = {
-                        question: e.target.value,
-                        choice: [],
-                        answer: "",
-                      };
-                      setPayload({ ...payload, content });
-                    }}
-                  />
-                  {Array(4)
-                    .fill(1)
-                    .map((_, choiceIndex) => {
-                      return (
-                        <div key={choiceIndex}>
-                          <label htmlFor={`choice${index}${choiceIndex}`}>
-                            Choice {choiceIndex + 1}
-                          </label>
-                          <input
-                            type="text"
-                            required
-                            id={`choice${index}${choiceIndex}`}
-                            placeholder={`Choice ${choiceIndex + 1}`}
-                            className="border border-gray-300 rounded-md p-2 w-80"
-                            onChange={(e) => {
-                              const content = [...payload.content];
-                              content[index].choice[choiceIndex] = {
-                                [choiceIndex + 1]: e.target.value,
-                              };
-                              setPayload({ ...payload, content });
-                            }}
-                          />
-                        </div>
-                      );
-                    })}
-                  <label htmlFor={`answer`}>Answer</label>
-                  <input
-                    type="number"
-                    id={`answer`}
-                    required
-                    min={1}
-                    max={4}
-                    placeholder="1-4"
-                    className="border border-gray-300 rounded-md p-2 w-80"
-                    onChange={(e) => {
-                      const content = [...payload.content];
-                      content[index].answer = e.target.value;
-                      setPayload({ ...payload, content });
-                    }}
-                  />
-                </div>
-              );
-            })}
-          </div>
-          <button
-            className="bg-blue-500 text-white p-2 rounded-md w-80"
-            type="submit"
-          >
-            Create
-          </button>
         </form>
       </main>
       <Footer />
