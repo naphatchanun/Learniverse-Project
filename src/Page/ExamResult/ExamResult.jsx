@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 const ExamResult = () => {
   const { state } = useLocation();
   const Navigate = useNavigate();
+  console.log(state);
 
   useEffect(() => {
     if (!state) {

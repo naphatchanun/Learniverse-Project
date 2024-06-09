@@ -29,18 +29,21 @@ const PlayHistory = () => {
     <main>
       {histories.map((item, index) => {
         return (
-          <div
-            className="grid md:grid-cols-[3fr_3fr_3fr] grid-cols-3 space-x-3"
-            key={index}
-          >
-            <div className="flex justify-center rounded-md bg-gray-200 px-2 py-2 mt-2">
-              {item.examID.label}
-            </div>
-            <div className="flex justify-center rounded-md bg-gray-200 px-2 py-2 mt-2">
-              {item.examID.subject}
-            </div>
-            <div className="flex justify-center rounded-md bg-gray-200 px-2 py-2 mt-2">
-              {item.examID.level}
+          <div className="rounded-md bg-gray-200 mt-3" key={index}>
+            <div className="grid md:grid-cols-[3fr_3fr_3fr_3fr-3fr] grid-cols-5 space-x-3">
+              <div className="flex justify-center  px-2 py-2">
+                {item.examID.label}
+              </div>
+              <div className="flex justify-center  px-2 py-2 ">
+                {item.examID.subject}
+              </div>
+              <div className="flex justify-center  px-2 py-2 ">
+                {item.examID.level}
+              </div>
+              <div className="flex justify-center  px-2 py-2 ">
+                {item.score}
+              </div>
+              <div className="flex justify-center  px-2 py-2 ">{item.date}</div>
             </div>
           </div>
         );

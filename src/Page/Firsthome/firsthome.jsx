@@ -58,10 +58,10 @@ export default function First() {
           About
         </div>
         <div className="flex justify-center font-serif mt-5 text-center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt est
-          obcaecati accusantium consequuntur temporibus <br />
-          illum sit tempora laborum eligendi optio praesentium eveniet, natus
-          distinctio a, aspernatur maxime. Blanditiis, excepturi iusto!
+          Our objective is I want people who come to take the exam to have an
+          understanding of the content of that subject <br />
+          and to promote the development of thinking. Problem slides Questions
+          that may be encountered in everyday life
         </div>
         <div className="grid md:grid-cols-[4fr_4fr_4fr] grid-cols-3 mt-5">
           <div className="flex justify-end ">
