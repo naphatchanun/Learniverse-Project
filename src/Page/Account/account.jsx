@@ -51,11 +51,7 @@ export default function Home() {
         isVisible={showEditExam}
         onClose={() => setShowEditExam(false)}
       />
-<<<<<<< HEAD
-    </>
-=======
       <Footer />
-    </Fragment>
->>>>>>> 48e4353e50319f555f124560cbe1b3a609ac6cf7
+    </>
   );
 }
