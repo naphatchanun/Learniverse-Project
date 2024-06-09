@@ -13,7 +13,7 @@ const AccountHistory = ({ isVisible, onClose }) => {
         <h1 className="text-2xl font-bold inderline mt-8 text-center">
           Play History
         </h1>
-        <div className="grid md:grid-cols-[3fr_3fr_3fr_3fr_3fr] grid-cols-3 flex space-x-3 mt-5">
+        <div className="grid md:grid-cols-[3fr_3fr_3fr_3fr_3fr] grid-cols-5 flex space-x-3 mt-5">
           <h1 className="text-[#FB6D48] text-lg font-bold text-center">Exam</h1>
           <h1 className="text-[#FB6D48] text-lg font-bold text-center">
             Subject

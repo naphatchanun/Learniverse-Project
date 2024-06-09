@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <div className="flex justify-center">
-        <div className="border-1 bg-gray-200 w-full h-14">
+        <div className="border-1 bg-[#FBF3D5] w-full h-14">
           <div className="flex justify-center">
             <div className="flex items-center">
               <div className="px-10 py-2">
@@ -21,7 +21,10 @@ export default function Home() {
               </div>
             </div>
             <div className="px-10 py-2">
-              <ui className="block py-2 px-3 hover:text-[#FB6D48] cursor-pointer">
+              <ui
+                className="block py-2 px-3 hover:text-[#FB6D48] cursor-pointer"
+                onClick={() => setShowAccounthistory(true)}
+              >
                 History
               </ui>
             </div>

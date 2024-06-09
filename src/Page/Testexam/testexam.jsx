@@ -6,6 +6,8 @@ import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../context/user";
 import { calcurateScore } from "../../util/calcurateScore";
+import { Footer } from "../../component/Footer/footer";
+import { Link } from "react-router-dom";
 // import About1 from "../../assets/about1.png";
 
 const Testexam = () => {
@@ -97,25 +99,96 @@ const Testexam = () => {
 
   return (
     <main>
-      <div className="bg-[#FBF3D5] h-screen">
+      <div className="">
         <div className="flex justify-center py-20 ">
-          <div className="rounded-md border-2 shadow-xl w-[800px] h-[350px] px-10 bg-white">
-            {exam.map((item, index) => {
-              return (
-                <Exam
-                  key={index}
-                  item={item}
-                  current={current}
-                  currentItem={index}
-                  currentAnswer={currentAnswer}
-                  examLength={exam.length}
-                  handleNext={handleNext}
-                  handleBack={handleBack}
-                  handleChange={handleChange}
-                  handleSubmit={handleSubmit}
-                />
-              );
-            })}
+          <div className="grid md:md:grid-cols-[6fr_2fr] grid-cols-2">
+            <div className="rounded-md border-2 shadow-xl w-[800px] h-[350px] px-10 bg-white">
+              {exam.map((item, index) => {
+                return (
+                  <Exam
+                    key={index}
+                    item={item}
+                    current={current}
+                    currentItem={index}
+                    currentAnswer={currentAnswer}
+                    examLength={exam.length}
+                    handleNext={handleNext}
+                    handleBack={handleBack}
+                    handleChange={handleChange}
+                    handleSubmit={handleSubmit}
+                  />
+                );
+              })}
+            </div>
+            <div className="flex justify-center">
+              <div className="rounded-md bg-[#FBF3D5] w-72 h-[500px]">
+                <h1 className="text-center text-2xl mt-2 font-bold">
+                  หมวดท้าทาย
+                </h1>
+                <div className="grid md:md:grid-rows-[3fr_3fr_3fr_3fr] grid-rows-4">
+                  <div className="flex justify-center">
+                    <Link to="/Play" className="flex items-center">
+                      <div className="rounded-md bg-white w-56 h-24 mt-3 hover:bg-[#FB6D48] hover:text-white">
+                        <h1 className="text-center text-xl mt-4 font-bold">
+                          Mathematic
+                        </h1>
+                        <h2 className="text-center text-lg">Level:Difficult</h2>
+                      </div>
+                    </Link>
+                  </div>
+                  <div className="flex justify-center">
+                    <Link to="/Play" className="flex items-center">
+                      <div className="rounded-md bg-white w-56 h-24 mt-3 hover:bg-[#FB6D48] hover:text-white">
+                        <h1 className="text-center text-xl mt-4 font-bold">
+                          Biology
+                        </h1>
+                        <h2 className="text-center text-lg">Level:Difficult</h2>
+                      </div>
+                    </Link>
+                  </div>
+                  <div className="flex justify-center">
+                    <Link to="/Play" className="flex items-center">
+                      <div className="rounded-md bg-white w-56 h-24 mt-3 hover:bg-[#FB6D48] hover:text-white">
+                        <h1 className="text-center text-xl mt-4 font-bold">
+                          Chemical
+                        </h1>
+                        <h2 className="text-center text-lg">Level:Difficult</h2>
+                      </div>
+                    </Link>
+                  </div>
+                  <div className="flex justify-center">
+                    <Link to="/Play" className="flex items-center">
+                      <div className="rounded-md bg-white w-56 h-24 mt-3 hover:bg-[#FB6D48] hover:text-white">
+                        <h1 className="text-center text-xl mt-4 font-bold">
+                          Physical
+                        </h1>
+                        <h2 className="text-center text-lg">Level:Difficult</h2>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+                {/* <div className="flex justify-center mt-3">
+                  <div className="grid md:md:grid-rows-[3fr_3fr_3fr_3fr] grid-rows-4">
+                    <div className="rounded-md bg-[#FBF3D5] w-56 h-24 mt-3 border-4 border-[#FB6D48] transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">
+                      <h1 className="text-center text-xl mt-3">คณิตศาสตร์</h1>
+                      <h2 className="text-center text-lg">ระดับยาก</h2>
+                    </div>
+                    <div className="rounded-md bg-[#FBF3D5] w-56 h-24 mt-3 border-4 border-[#FB6D48] transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">
+                      <h1 className="text-center text-xl mt-3">คณิตศาสตร์</h1>
+                      <h2 className="text-center text-lg">ระดับยาก</h2>
+                    </div>
+                    <div className="rounded-md bg-[#FBF3D5] w-56 h-24 mt-3 border-4 border-[#FB6D48] transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">
+                      <h1 className="text-center text-xl mt-3">คณิตศาสตร์</h1>
+                      <h2 className="text-center text-lg">ระดับยาก</h2>
+                    </div>
+                    <div className="rounded-md bg-[#FBF3D5] w-56 h-24 mt-3 border-4 border-[#FB6D48] transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">
+                      <h1 className="text-center text-xl mt-3">คณิตศาสตร์</h1>
+                      <h2 className="text-center text-lg">ระดับยาก</h2>
+                    </div>
+                  </div>
+                </div> */}
+              </div>
+            </div>
           </div>
         </div>
         {/* <div className="grid md:grid-cols-[4fr_4fr_4fr] grid-col-3">
@@ -157,6 +230,7 @@ const Testexam = () => {
           </div>
         </div>
       </div> */}
+      <Footer />
     </main>
   );
 };
