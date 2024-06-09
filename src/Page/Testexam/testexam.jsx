@@ -141,23 +141,27 @@ const Testexam = () => {
     <main className="flex justify-center mt-20">
       {isStart ? (
         <main>
-          <div>Timer : {formatTime(timer)}</div>
-          {exam.map((item, index) => {
-            return (
-              <Exam
-                key={index}
-                item={item}
-                current={current}
-                currentItem={index}
-                currentAnswer={currentAnswer}
-                examLength={exam.length}
-                handleNext={handleNext}
-                handleBack={handleBack}
-                handleChange={handleChange}
-                handleSubmit={handleSubmit}
-              />
-            );
-          })}
+          <div className="flex justify-end">Timer : {formatTime(timer)}</div>
+          <div className="flex justify-center">
+            <duv className="rounded-md w-[800px] h-[400px] bg-[#FBF3D5]">
+              {exam.map((item, index) => {
+                return (
+                  <Exam
+                    key={index}
+                    item={item}
+                    current={current}
+                    currentItem={index}
+                    currentAnswer={currentAnswer}
+                    examLength={exam.length}
+                    handleNext={handleNext}
+                    handleBack={handleBack}
+                    handleChange={handleChange}
+                    handleSubmit={handleSubmit}
+                  />
+                );
+              })}
+            </duv>
+          </div>
         </main>
       ) : (
         <main>

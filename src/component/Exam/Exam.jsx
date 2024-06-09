@@ -19,26 +19,32 @@ const Exam = (props) => {
         current === currentItem ? "block" : "hidden"
       }`}
     >
-      <h1 className="text-lg  mt-10">{question}</h1>
-      <div>
-        {choice.map((item, index) => {
-          return (
-            <div key={index} className="mt-3">
-              <input
-                type="radio"
-                name={currentItem}
-                value={index + 1}
-                onChange={handleChange}
-                {...(currentAnswer[index + 1] === index + 1
-                  ? { checked: true }
-                  : {})}
-              />
-              {Object.values(item)}
-            </div>
-          );
-        })}
+      <h1 className="text-lg  mt-10 px-10">{question}</h1>
+      <div className="mt-8 px-10">
+        <div className="">
+          {choice.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className="mt-3 border bg-[#FB6D48] bg-opacity-75 h-10 px-5 py-2"
+              >
+                <input
+                  type="radio"
+                  name={currentItem}
+                  value={index + 1}
+                  className=""
+                  onChange={handleChange}
+                  {...(currentAnswer[index + 1] === index + 1
+                    ? { checked: true }
+                    : {})}
+                />
+                {Object.values(item)}
+              </div>
+            );
+          })}
+        </div>
       </div>
-      <div className="flex justify-center mt-5 space-x-5">
+      <div className="flex justify-center mt-10 space-x-5">
         <button
           onClick={handleBack}
           className="bg-gray-200 rounded-full px-4 py-1"
