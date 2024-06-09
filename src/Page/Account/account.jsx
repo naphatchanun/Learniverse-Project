@@ -4,9 +4,11 @@
 import AccountHistory from "../../component/AccountHistory/accounthistory";
 import { useState } from "react";
 import { Footer } from "../../component/Footer/footer";
+import ExamStorage from "../../component/ExamStorage/ExamStorage";
+import Profile from "../../component/Profile/Profile";
 
 export default function Home() {
-  const [showAccounthistory, setShowAccounthistory] = useState(false);
+  const [display, setDisplay] = useState("Profile");
   // const [showEditExam, setShowEditExam] = useState(false);
   return (
     <>
@@ -15,7 +17,10 @@ export default function Home() {
           <div className="flex justify-center">
             <div className="flex items-center">
               <div className="px-10 py-2">
-                <ui className="block py-2 px-3 hover:text-[#FB6D48] cursor-pointer">
+                <ui
+                  className="block py-2 px-3 hover:text-[#FB6D48] cursor-pointer"
+                  onClick={() => setDisplay("Profile")}
+                >
                   Profile
                 </ui>
               </div>
@@ -23,13 +28,16 @@ export default function Home() {
             <div className="px-10 py-2">
               <ui
                 className="block py-2 px-3 hover:text-[#FB6D48] cursor-pointer"
-                onClick={() => setShowAccounthistory(true)}
+                onClick={() => setDisplay("history")}
               >
                 History
               </ui>
             </div>
             <div className="px-10 py-2">
-              <ui className="block py-2 px-3 hover:text-[#FB6D48] cursor-pointer">
+              <ui
+                className="block py-2 px-3 hover:text-[#FB6D48] cursor-pointer"
+                onClick={() => setDisplay("myExam")}
+              >
                 Exam Storage
               </ui>
             </div>
@@ -77,10 +85,10 @@ export default function Home() {
           </div>
         </div> */}
       </div>
-      <AccountHistory
-        isVisible={showAccounthistory}
-        onClose={() => setShowAccounthistory(false)}
-      />
+      {display === "Profile" && <Profile />}
+      {display === "history" && <AccountHistory />}
+      {display === "myExam" && <ExamStorage />}
+      {/* <Modal isVisible={showModal} onClose={() => setShowModal(false)} /> */}
       {/* <EditExam
         isVisible={showEditExam}
         onClose={() => setShowEditExam(false)}

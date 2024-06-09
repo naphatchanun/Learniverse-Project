@@ -1,12 +1,7 @@
 import React from "react";
 import PlayHistory from "../../component/PlayHistory/PlayHistory";
 
-const AccountHistory = ({ isVisible, onClose }) => {
-  if (!isVisible) return null;
-
-  const handleClose = (e) => {
-    if (e.target.id === "wrapper") onClose();
-  };
+const AccountHistory = () => {
   return (
     <div className="flex justify-center items-center">
       <div className="border rounded-md w-auto px-3 h-auto mt-10">
