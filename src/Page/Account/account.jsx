@@ -2,14 +2,24 @@
 // import "boxicons";
 // import EditExam from "../../component/Editexam/editexam";
 import AccountHistory from "../../component/AccountHistory/accounthistory";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Footer } from "../../component/Footer/footer";
 import ExamStorage from "../../component/ExamStorage/ExamStorage";
 import Profile from "../../component/Profile/Profile";
+import { AuthContext } from "../../context/user";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const auth = useContext(AuthContext);
+  const Navigate = useNavigate();
   const [display, setDisplay] = useState("Profile");
   // const [showEditExam, setShowEditExam] = useState(false);
+
+  useEffect(() => {
+    if (!auth.userId) {
+      Navigate("/login");
+    }
+  }, []);
   return (
     <>
       <div className="flex justify-center">
