@@ -120,39 +120,44 @@ const Profile = () => {
               <div className="flex justify-center">
                 <div className="rounded-md px-4 ">
                   <h1 className="text-lg">Edit Profile</h1>
-                  <form onSubmit={handleEditSumbit} className="mt-2">
+                  <form onSubmit={handleEditSumbit} className="">
                     <input
                       type="text"
                       name="firstName"
-                      className="w-64 h-8 rounded-md px-2"
+                      className="w-64 h-8 rounded-md px-2 border-2 rounded-md px-2 mt-2 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
+                      disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
                       placeholder={profile.firstName}
                       onChange={handleEditChange}
                     />
                     <input
                       type="text"
                       name="lastName"
-                      className="w-64 h-8 rounded-md px-2 mt-2"
+                      className="w-64 h-8 rounded-md px-2 mt-2 border-2 rounded-md px-2 mt-2 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
+                      disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
                       placeholder={profile.lastName}
                       onChange={handleEditChange}
                     />
                     <input
                       type="text"
                       name="displayName"
-                      className="w-64 h-8 rounded-md px-2 mt-2"
+                      className="w-64 h-8 rounded-md px-2 mt-2 border-2 rounded-md px-2 mt-2 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
+                      disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
                       placeholder={profile.displayName}
                       onChange={handleEditChange}
                     />
                     <input
                       type="text"
                       name="email"
-                      className="w-64 h-8 rounded-md px-2 mt-2"
+                      className="w-64 h-8 rounded-md px-2 mt-2 border-2 rounded-md px-2 mt-2 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
+                      disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
                       placeholder={profile.email}
                       onChange={handleEditChange}
                     />
                     <input
                       type="text"
                       name="phone"
-                      className="w-64 h-8 rounded-md px-2 mt-2"
+                      className="w-64 h-8 rounded-md px-2 mt-2 border-2 rounded-md px-2 mt-2 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
+                      disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
                       placeholder={profile.phone}
                       onChange={handleEditChange}
                     />
@@ -172,21 +177,24 @@ const Profile = () => {
                     <input
                       type="password"
                       placeholder="Old password"
-                      className="w-64 h-8 rounded-md px-2 mt-2"
+                      className="w-64 h-8 border-2 rounded-md px-2 mt-2 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
+                      disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
                       name="oldPassword"
                       onChange={handlePasswordChange}
                     />
                     <input
                       type="password"
                       placeholder="New password"
-                      className="w-64 h-8 rounded-md px-2 mt-2"
+                      className="w-64 h-8 rounded-md px-2 mt-2 border-2 rounded-md px-2 mt-2 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
+                      disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
                       name="newPassword"
                       onChange={handlePasswordChange}
                     />
                     <input
                       type="password"
                       placeholder="Confirm new password"
-                      className="w-64 h-8 rounded-md px-2 mt-2"
+                      className="w-64 h-8 rounded-md px-2 mt-2 border-2 rounded-md px-2 mt-2 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
+                      disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
                       name="confirmPassword"
                       onChange={handlePasswordChange}
                     />
