@@ -80,7 +80,7 @@ const Create = () => {
           className="flex flex-col items-center justify-center h-full"
           onSubmit={handleSubmit}
         >
-          <div className="rounded-md bg-[#FBF3D5] mt-10 px-10 shadow-lg">
+          <div className="rounded-md bg-gray-100 mt-10 px-10 shadow-lg">
             <h1 className="text-4xl font-bold mt-3 text-center">Create</h1>
             <div className="mt-5 shadow-xl h-10 w-30 px-3">
               <label htmlFor="label" className="px-3 text-lg">
