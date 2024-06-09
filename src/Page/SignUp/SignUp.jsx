@@ -2,19 +2,29 @@ import Sign from "../../assets/signup.png";
 import "./signUp.css";
 import { AxiosLib } from "../../lib/axiosLib";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
+  const Navigate = useNavigate();
   const [userData, setUserData] = useState({
     firstName: "",
     lastName: "",
     email: "",
     password: "",
-    phone: "",
-    role: "",
+    confirmPassword: "",
   });
   const onFormSubmit = async (e) => {
+    e.preventDefault();
     try {
-      e.preventDefault();
+      if (userData.password !== userData.confirmPassword) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Password does not match",
+        });
+        return;
+      }
       const result = await AxiosLib.post("/user/register", userData);
       if (result.status === 200) {
         window.location.href = "/";
@@ -82,6 +92,18 @@ const SignUp = () => {
                     <input
                       type="password"
                       name="password"
+                      className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
+                  disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
+                      placeholder="************"
+                    />
+                  </div>
+                  <div className="mt-2">
+                    <label className="text-sm font-medium font-sans">
+                      Confirm Password
+                    </label>
+                    <input
+                      type="password"
+                      name="confirmPassword"
                       className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
                   disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
                       placeholder="************"
