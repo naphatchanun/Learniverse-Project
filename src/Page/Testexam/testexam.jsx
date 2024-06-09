@@ -16,11 +16,16 @@ const Testexam = () => {
   const [current, setCurrent] = useState(0);
   const [currentAnswer, setCurrentAnswer] = useState([]);
   const correctAnswer = exam.map((item) => item);
+  const [isStart, setIsStart] = useState(false);
+  const [timer, setTimer] = useState(0);
+  const [isFinish, setIsFinish] = useState(false);
+
   const payload = {
     answer: currentAnswer,
     examID: examID.examID,
     userID: auth.userId,
     correctAnswer: correctAnswer.map((item) => item.answer),
+    timeLeft: timer,
     score: calcurateScore(
       currentAnswer,
       correctAnswer.map((item) => item.answer)
@@ -32,6 +37,7 @@ const Testexam = () => {
     try {
       const response = await AxiosLib.get(`/exam/exam/${examID.examID}`);
       if (response.status === 200) {
+        setTimer(response.data.duration);
         setExam(response.data.content);
       }
     } catch (error) {
@@ -79,8 +85,8 @@ const Testexam = () => {
       cancelButtonColor: "#d33",
     }).then(async (result) => {
       if (result.isConfirmed) {
+        setIsFinish(true);
         const result = await AxiosLib.post("/exam/submit", payload);
-        console.log(result);
         if (result.status === 200) {
           Navigate(`/testexam/result/${examID.examID}`, {
             state: { payload: payload },
@@ -90,28 +96,75 @@ const Testexam = () => {
     });
   };
 
+  const handleStart = () => {
+    setIsStart(true);
+  };
+
   useEffect(() => {
     fetchExam();
   }, []);
 
+  useEffect(() => {
+    if (timer >= 0 && isStart) {
+      const interval = setInterval(() => {
+        setTimer(timer - 1);
+      }, 1000);
+      if (timer === 0 && !isFinish) {
+        setIsFinish(true);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Time's up!",
+          timer: 1500,
+          timerProgressBar: true,
+        }).then(async () => {
+          const result = await AxiosLib.post("/exam/submit", payload);
+          if (result.status === 200) {
+            Navigate(`/testexam/result/${examID.examID}`, {
+              state: { payload: payload },
+            });
+          }
+        });
+        clearInterval(interval);
+      }
+      return () => clearInterval(interval);
+    }
+  }, [timer, isStart]);
+
   return (
     <main className="flex justify-center mt-20">
-      {exam.map((item, index) => {
-        return (
-          <Exam
-            key={index}
-            item={item}
-            current={current}
-            currentItem={index}
-            currentAnswer={currentAnswer}
-            examLength={exam.length}
-            handleNext={handleNext}
-            handleBack={handleBack}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
-          />
-        );
-      })}
+      {isStart ? (
+        <main>
+          <div>Timer : {timer}</div>
+          {exam.map((item, index) => {
+            return (
+              <Exam
+                key={index}
+                item={item}
+                current={current}
+                currentItem={index}
+                currentAnswer={currentAnswer}
+                examLength={exam.length}
+                handleNext={handleNext}
+                handleBack={handleBack}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+              />
+            );
+          })}
+        </main>
+      ) : (
+        <main>
+          <div className="flex justify-center">
+            <button
+              onClick={handleStart}
+              className="rounded-full bg-[#FB6D48] px-5 py-2 text-white"
+            >
+              Start
+            </button>
+          </div>
+        </main>
+      )}
     </main>
   );
 };
