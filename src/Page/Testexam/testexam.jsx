@@ -5,6 +5,7 @@ import Exam from "../../component/Exam/Exam";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../context/user";
 import { calcurateScore } from "../../util/calcurateScore";
+import { Footer } from "../../component/Footer/footer";
 
 const Testexam = () => {
   const auth = useContext(AuthContext);
@@ -138,12 +139,16 @@ const Testexam = () => {
   };
 
   return (
-    <main className="flex justify-center mt-20">
+    <main className="flex justify-center mt-10">
       {isStart ? (
         <main>
-          <div className="flex justify-end">Timer : {formatTime(timer)}</div>
-          <div className="flex justify-center">
-            <duv className="rounded-md w-[800px] h-[400px] bg-[#FBF3D5]">
+          <div className="flex justify-end">
+            <div className="border bg-gray-200 w-40 h-8 text-center">
+              Timer : {formatTime(timer)}
+            </div>
+          </div>
+          <div className="flex justify-center mt-5">
+            <duv className="rounded-md w-[800px] h-[500px] bg-[#FBF3D5]">
               {exam.map((item, index) => {
                 return (
                   <Exam

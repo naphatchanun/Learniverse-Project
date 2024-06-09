@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Footer } from "../../component/Footer/footer";
-import About2 from "../../assets/about2.png";
-
+import Pythagoras from "../../assets/Pythagoras.jpg";
+import Aris from "../../assets/Aris.jpeg";
+import Newton from "../../assets/newton.jpg";
+import Anto from "../../assets/Anto.jpg";
 const ExamResult = () => {
   const { state } = useLocation();
   const Navigate = useNavigate();
@@ -27,14 +29,14 @@ const ExamResult = () => {
         <div className="flex justify-center text-3xl mt-10 font-semibold font-serif">
           Read more
         </div>
-        <div className="flex justify-center font-serif mt-5 text-center text-lg">
+        <div className="flex justify-center font-serif mt-5 text-center text-lg text-[#FB6D48]">
           รู้หรือไม่? บิดาของเเต่ละวิชาคือใครกัน!
         </div>
         <div className="grid md:grid-cols-[4fr_4fr_4fr_4fr] grid-cols-4 mt-5">
           <div className="flex justify-center ">
             <div className="border-4 rounded-md px-10 w-5/6 py-3 shadow-lg transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 ">
               <div className="flex justify-center">
-                <img src={About2} alt="" className="w-2/5" />
+                <img src={Pythagoras} alt="" className="w-6/7 rounded-md" />
               </div>
               <div className="flex justify-center text-center mt-3">
                 <div>
@@ -51,7 +53,7 @@ const ExamResult = () => {
           <div className="flex justify-center ">
             <div className="border-4 rounded-md px-10 w-5/6 py-3 shadow-lg transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">
               <div className="flex justify-center">
-                <img src={About2} alt="" className="w-2/5" />
+                <img src={Aris} alt="" className="w-4/5 rounded-md" />
               </div>
               <div className="flex justify-center text-center mt-3">
                 <div>
@@ -70,7 +72,7 @@ const ExamResult = () => {
           <div className="flex justify-center ">
             <div className="border-4 rounded-md px-10 w-5/6 py-3 shadow-lg transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">
               <div className="flex justify-center">
-                <img src={About2} alt="" className="w-2/5" />
+                <img src={Anto} alt="" className="w-5/5 rounded-md" />
               </div>
               <div className="flex justify-center text-center mt-3">
                 <div>
@@ -90,7 +92,7 @@ const ExamResult = () => {
           <div className="flex justify-center ">
             <div className="border-4 rounded-md px-10 w-5/6 py-3 shadow-lg transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">
               <div className="flex justify-center">
-                <img src={About2} alt="" className="w-2/5" />
+                <img src={Newton} alt="" className="w-8/9 rounded-md" />
               </div>
               <div className="flex justify-center text-center mt-3">
                 <div>

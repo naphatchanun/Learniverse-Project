@@ -15,22 +15,17 @@ export default function Home() {
           <div className="flex justify-center">
             <div className="flex items-center">
               <div className="px-10 py-2">
-                <ui className="block py-2 px-3 hover:text-[#FB6D48] cursor-pointer">
+                <ui className="block py-2 px-3 hover:text-[#FB6D48] cursor-pointer font-bold">
                   Profile
                 </ui>
               </div>
             </div>
             <div className="px-10 py-2">
               <ui
-                className="block py-2 px-3 hover:text-[#FB6D48] cursor-pointer"
+                className="block py-2 px-3 hover:text-[#FB6D48] cursor-pointer font-bold"
                 onClick={() => setShowAccounthistory(true)}
               >
                 History
-              </ui>
-            </div>
-            <div className="px-10 py-2">
-              <ui className="block py-2 px-3 hover:text-[#FB6D48] cursor-pointer">
-                Exam Storage
               </ui>
             </div>
           </div>
