@@ -27,6 +27,7 @@ const Exam = (props) => {
               <div
                 key={index}
                 className="mt-3 border bg-[#FB6D48] bg-opacity-75 h-10 px-5 py-2 cursor-pointer"
+                htmlFor={currentItem}
               >
                 <input
                   type="radio"

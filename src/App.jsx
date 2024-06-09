@@ -30,8 +30,6 @@ export const App = () => {
           firstName: response.data.firstName,
           lastName: response.data.lastName,
           email: response.data.email,
-          role: response.data.role,
-          phone: response.data.phone,
         });
       }
     } catch (error) {
@@ -42,8 +40,6 @@ export const App = () => {
         firstName: "",
         lastName: "",
         email: "",
-        role: "",
-        phone: "",
       });
     }
   }, []);

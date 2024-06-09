@@ -180,7 +180,7 @@ function play() {
       <div className="flex py-10 flex-col">
         <h1 className="text-center text-2xl font-bold">Exam List</h1>
         <main className="flex justify-center items-center flex-col ">
-          <div className="grid grid-cols-7 w-3/4 text-center place-items-center">
+          <div className="grid grid-cols-6 w-3/4 text-center place-items-center">
             <div className="text-[#FB6D48] text-lg font-bold">No.</div>
             <div className="text-[#FB6D48] text-lg font-bold">Exam Name</div>
             <div className="text-[#FB6D48] text-lg font-bold">Subject</div>
@@ -199,7 +199,10 @@ function play() {
             return (
               <div
                 key={index}
-                className="grid grid-cols-7 w-3/4 text-center place-items-center h-10 py-2 border-b-2 border-[#FB6D48]"
+                className="grid grid-cols-6 w-3/4 text-center place-content-center h-10 border-b-2 border-[#FB6D48] hover:bg-[#FB6D48] hover:text-white cursor-pointer p-5"
+                onClick={() => {
+                  handleJoin(item._id);
+                }}
               >
                 <div>{index + 1}</div>
                 <div>{item.label}</div>
@@ -207,14 +210,6 @@ function play() {
                 <div>{item.grade}</div>
                 <div>{levelText(item.level)}</div>
                 <div>{item.createBy}</div>
-                <button
-                  className="rounded-2xl bg-[#FB6D48] text-white w-1/2 h-full py-1 "
-                  onClick={() => {
-                    handleJoin(item._id);
-                  }}
-                >
-                  Join
-                </button>
               </div>
             );
           })}

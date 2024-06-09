@@ -5,7 +5,6 @@ import Exam from "../../component/Exam/Exam";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../context/user";
 import { calcurateScore } from "../../util/calcurateScore";
-import { Footer } from "../../component/Footer/footer";
 
 const Testexam = () => {
   const auth = useContext(AuthContext);
@@ -86,6 +85,7 @@ const Testexam = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         setIsFinish(true);
+        console.log(payload);
         const result = await AxiosLib.post("/exam/submit", payload);
         if (result.status === 200) {
           Navigate(`/testexam/result/${examID.examID}`, {
@@ -101,6 +101,10 @@ const Testexam = () => {
   };
 
   useEffect(() => {
+    if (!auth.isLogin) {
+      Navigate("/login");
+    }
+    console.log(auth.isLogin);
     fetchExam();
   }, []);
 
