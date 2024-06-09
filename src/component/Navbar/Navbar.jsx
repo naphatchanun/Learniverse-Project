@@ -53,7 +53,7 @@ function Navbar() {
               <>
                 <div>
                   <Link to="/Account">
-                    <div className="border rounded-md bg-[#F2F1EB] px-3 py-1">
+                    <div className="border rounded-md bg-[#FBF3D5] px-3 py-1">
                       {auth.displayName}
                     </div>
                   </Link>

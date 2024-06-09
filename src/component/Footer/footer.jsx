@@ -6,11 +6,11 @@ export const Footer = () => {
     <footer className="hidden md:grid mt-10">
       <div className="bg-[#FB6D48]">
         <div className="grid grid-cols-[6fr_2fr_2fr_1fr]">
-          <div className="flex items-center px-10">
+          <div className="flex items-center px-10 ">
             <img
               src={Logo}
               alt="Logo"
-              className="ml-16 w-28 object-cover my-3"
+              className="ml-16 w-36 object-cover my-3"
             />
           </div>
           <div className="flex my-4 justify-center">

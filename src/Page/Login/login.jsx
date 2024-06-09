@@ -70,9 +70,9 @@ const login = () => {
                       placeholder="Enter your password"
                     />
                   </div>
-                  <button className="mt-3 font-medium text-base text-violet-500 font-sans ">
+                  {/* <button className="mt-3 font-medium text-base text-violet-500 font-sans ">
                     Forget password
-                  </button>
+                  </button> */}
                   <div className="py-3 mt-2">
                     <button className="rounded-md bg-[#FB6D48] px-10 py-2 text-white font-sans w-full">
                       Login
