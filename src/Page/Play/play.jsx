@@ -25,7 +25,6 @@ function play() {
       const response = await AxiosLib.get("/exam/exam/");
       if (response.status === 200) {
         setExamList(response.data);
-        console.log(response.data[0]._id);
       }
     } catch (error) {
       console.log(error);
@@ -52,9 +51,10 @@ function play() {
 
   const handleJoin = async (id) => {
     try {
+      console.log(id);
       const response = await AxiosLib.post("/exam/exam", id);
       if (response.status === 200) {
-        navigate(`/testexam/${response.data._id}`);
+        navigate(`/testexam/${id}`);
       }
     } catch (error) {
       Swal.fire({
@@ -312,7 +312,7 @@ function play() {
                 key={index}
                 className="grid grid-cols-7 w-3/4 text-center place-items-center h-10 py-2 border-b-2 border-[#FB6D48]"
               >
-                <div>{index + 1}</div>
+                <div>{item._id}</div>
                 <div>{item.label}</div>
                 <div>{item.subject}</div>
                 <div>{item.grade}</div>
