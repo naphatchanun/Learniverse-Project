@@ -17,7 +17,7 @@ export default function Home() {
 
   useEffect(() => {
     if (!auth.userId) {
-      Navigate("/login");
+      Navigate("/");
     }
   }, []);
   return (
