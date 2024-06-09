@@ -24,7 +24,6 @@ const Create = () => {
   const [duration, setDuration] = useState({
     hour: 0,
     minute: 0,
-    second: 0,
   });
 
   const handleChange = (e) => {
@@ -34,6 +33,14 @@ const Create = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (duration.hour === 0 && duration.minute === 0 && duration.second === 0) {
+      return Swal.fire({
+        icon: "error",
+        title: "Duration must be more than 0",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
     try {
       const result = await AxiosLib.post("/user/createExam", payload);
       if (result.status === 200) {
@@ -57,9 +64,7 @@ const Create = () => {
   useEffect(() => {
     setPayload({
       ...payload,
-      duration: `${
-        duration.hour * 60 * 60 + duration.minute * 60 + Number(duration.second)
-      }`,
+      duration: `${duration.hour * 60 * 60 + duration.minute * 60}`,
     });
   }, [duration]);
 
@@ -130,8 +135,8 @@ const Create = () => {
               })}
             </select>
           </div>
-          <div className="flex">
-            <label htmlFor="duration">Duration</label>
+          <div className="flex justify-start items-center">
+            <label>Duration</label>
             <input
               type="number"
               min={0}
@@ -142,6 +147,7 @@ const Create = () => {
                 setDuration({ ...duration, hour: e.target.value });
               }}
             />
+            <label htmlFor="duration">Hour</label>
             <input
               type="number"
               min={0}
@@ -152,16 +158,7 @@ const Create = () => {
                 setDuration({ ...duration, minute: e.target.value });
               }}
             />
-            <input
-              type="number"
-              min={0}
-              id="duration"
-              value={duration.second}
-              className="border border-gray-300 rounded-md p-2 w-20"
-              onChange={(e) => {
-                setDuration({ ...duration, second: e.target.value });
-              }}
-            />
+            <label>Minute</label>
           </div>
           <div>
             <label htmlFor="totalmark">Number of items</label>
@@ -170,8 +167,9 @@ const Create = () => {
               min={1}
               required
               id="totalmark"
+              placeholder="1-100"
               value={payload.totalmark}
-              className="border border-gray-300 rounded-md p-2 w-80"
+              className="border border-gray-300 rounded-md p-2 w-20"
               onChange={handleChange}
             />
           </div>
@@ -185,6 +183,8 @@ const Create = () => {
                   <input
                     type="text"
                     id={`question${index}`}
+                    required
+                    placeholder="What do you want to ask?"
                     className="border border-gray-300 rounded-md p-2 w-80"
                     onChange={(e) => {
                       const content = [...payload.content];
@@ -206,7 +206,9 @@ const Create = () => {
                           </label>
                           <input
                             type="text"
+                            required
                             id={`choice${index}${choiceIndex}`}
+                            placeholder={`Choice ${choiceIndex + 1}`}
                             className="border border-gray-300 rounded-md p-2 w-80"
                             onChange={(e) => {
                               const content = [...payload.content];
@@ -221,8 +223,12 @@ const Create = () => {
                     })}
                   <label htmlFor={`answer`}>Answer</label>
                   <input
-                    type="text"
+                    type="number"
                     id={`answer`}
+                    required
+                    min={1}
+                    max={4}
+                    placeholder="1-4"
                     className="border border-gray-300 rounded-md p-2 w-80"
                     onChange={(e) => {
                       const content = [...payload.content];
