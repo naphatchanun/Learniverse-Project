@@ -12,28 +12,47 @@ import { Footer } from "../../component/Footer/footer";
 function play() {
   const auth = useContext(AuthContext);
   const navigate = useNavigate();
+
   const [grade, setGrade] = useState({
-    grade: "",
-    subject: "",
-    level: "",
+    grade: "all",
+    subject: "all",
+    level: "all",
   });
+  const [examList, setExamList] = useState([]);
+
+  const fetchExamList = async () => {
+    try {
+      const response = await AxiosLib.get("/exam/exam/");
+      if (response.status === 200) {
+        setExamList(response.data);
+        console.log(response.data[0]._id);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const levelText = (level) => {
+    switch (level) {
+      case "1":
+        return "Easy";
+      case "2":
+        return "Normal";
+      case "3":
+        return "Diffucult";
+      default:
+        return "Unknow";
+    }
+  };
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
     setGrade((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleJoin = async (e) => {
-    e.preventDefault();
-    if (grade.grade === "" || grade.subject === "" || grade.level === "") {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Please select all the options",
-      });
-    }
+  const handleJoin = async (id) => {
     try {
-      const response = await AxiosLib.post("/exam/exam", grade);
+      const response = await AxiosLib.post("/exam/exam", id);
       if (response.status === 200) {
         navigate(`/testexam/${response.data._id}`);
       }
@@ -46,10 +65,11 @@ function play() {
     }
   };
   useEffect(() => {
-    if (!auth.email) {
-      navigate("/login");
-    }
+    fetchExamList();
   }, []);
+  useEffect(() => {
+    console.log(grade);
+  }, [grade]);
 
   return (
     <main>
@@ -67,7 +87,7 @@ function play() {
                 onChange={handleOnChange}
                 className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
               >
-                <option selected disabled>
+                <option selected value="all">
                   Grade
                 </option>
                 <option value="7">มัธยมศึกษาปีที่ 1</option>
@@ -98,7 +118,7 @@ function play() {
                   onChange={handleOnChange}
                   className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
                 >
-                  <option selected disabled>
+                  <option selected value="all">
                     Subject
                   </option>
                   <option value="math">Mathematics</option>
@@ -117,16 +137,16 @@ function play() {
                 </div>
               </div>
             </div>
-            <div className="flex justify-center mt-10">
+            {/* <div className="flex justify-center mt-10">
               <Link to="/testexam">
                 <button
-                  onClick={handleJoin}
+                  onClick={handleFilter}
                   className="rounded-full bg-[#FB6D48] px-10 py-2 text-white font-serif"
                 >
                   Join
                 </button>
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
         <div>
@@ -137,7 +157,7 @@ function play() {
                 onChange={handleOnChange}
                 className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
               >
-                <option selected disabled>
+                <option selected value="all">
                   Level
                 </option>
                 <option value="1">Easy</option>
@@ -157,7 +177,7 @@ function play() {
           </div>
         </div>
       </div>
-      <div>
+      {/* <div className="Popular mode">
         <div className="flex justify-start px-40 mt-10">
           <h1 className="font-semibold text-2xl font-serif">Popular Mode</h1>
         </div>
@@ -267,6 +287,49 @@ function play() {
             </div>
           </div>
         </div>
+      </div> */}
+      <div className="flex py-10 flex-col">
+        <h1 className="text-center text-2xl">Exam List</h1>
+        <main className="flex justify-center items-center flex-col ">
+          <div className="grid grid-cols-7 w-3/4 text-center place-items-center">
+            <div>No.</div>
+            <div>Exam Name</div>
+            <div>Subject</div>
+            <div>Grade</div>
+            <div>Level</div>
+            <div>Create by</div>
+          </div>
+          {examList.map((item, index) => {
+            if (
+              (grade.grade !== "all" && item.grade !== grade.grade) ||
+              (grade.subject !== "all" && item.subject !== grade.subject) ||
+              (grade.level !== "all" && item.level !== grade.level)
+            ) {
+              return null;
+            }
+            return (
+              <div
+                key={index}
+                className="grid grid-cols-7 w-3/4 text-center place-items-center h-10 py-2 border-b-2 border-[#FB6D48]"
+              >
+                <div>{index + 1}</div>
+                <div>{item.label}</div>
+                <div>{item.subject}</div>
+                <div>{item.grade}</div>
+                <div>{levelText(item.level)}</div>
+                <div>{item.createBy}</div>
+                <button
+                  className="rounded-2xl bg-[#FB6D48] text-white w-1/2 h-full"
+                  onClick={() => {
+                    handleJoin(item._id);
+                  }}
+                >
+                  Join
+                </button>
+              </div>
+            );
+          })}
+        </main>
       </div>
       <Footer />
     </main>
