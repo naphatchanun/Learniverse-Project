@@ -63,18 +63,14 @@ export const Footer = () => {
             </ul>
           </div>
         </div>
-        {/* <div className="flex justify-center">
-          <div className="flex flex-col">
-            <div className="text-sm text-center">
+        <div className="flex justify-center">
+          <div className="flex flex-col py-2">
+            <div className="text-sm text-center text-lg text-white">
               {" "}
-              Oh-myPet v1.0 copyright © 2023
-            </div>
-            <div className="text-sm text-center">
-              {" "}
-              This Project is for Study porpuse
+              © 2024 Learnivers
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
     </footer>
   );
