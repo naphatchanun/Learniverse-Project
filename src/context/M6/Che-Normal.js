@@ -3,9 +3,6 @@ import { createContext } from "react";
 export const NormalChem6 = [
   [
     {
-      _id: {
-        $oid: "6661783a6ad4d74a56f03de7",
-      },
       label: "test1",
       grade: "12",
       subject: "chem",

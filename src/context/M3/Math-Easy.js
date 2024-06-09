@@ -3,9 +3,6 @@ import { createContext } from "react";
 export const EasyMath3 = [
   [
     {
-      _id: {
-        $oid: "6661783a6ad4d74a56f03de7",
-      },
       label: "test1",
       grade: "9",
       subject: "math",

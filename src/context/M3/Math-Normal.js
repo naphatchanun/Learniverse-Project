@@ -3,10 +3,7 @@ import { createContext } from "react";
 export const NormalMath3 = [
   [
     {
-      _id: {
-        $oid: "6661783a6ad4d74a56f03de7",
-      },
-      label: "test1",
+      label: "Math for grade 9",
       grade: "9",
       subject: "math",
       level: "2",

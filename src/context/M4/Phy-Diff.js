@@ -3,10 +3,7 @@ import { createContext } from "react";
 export const DiffPhy4 = [
   [
     {
-      _id: {
-        $oid: "6661783a6ad4d74a56f03de7",
-      },
-      label: "test1",
+      label: "Physics for grade 10",
       grade: "10",
       subject: "phy",
       level: "3",
