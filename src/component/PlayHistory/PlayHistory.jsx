@@ -9,8 +9,6 @@ const PlayHistory = () => {
   const userID = auth.userId;
 
   const [histories, setHistories] = useState([]);
-  const isoDate = "2024-06-09T07:03:19.266Z";
-  const formattedDate = format(parseISO(isoDate), "dd-MM-yyyy");
   const fetchHistory = useCallback(async () => {
     try {
       const result = await AxiosLib.get(`/user/history/${userID}`);
@@ -22,6 +20,9 @@ const PlayHistory = () => {
       console.log(error);
     }
   }, [userID]);
+  const formattedDate = (date) => {
+    return format(parseISO(date), "dd/MM/yyyy");
+  };
 
   useEffect(() => {
     fetchHistory();
@@ -46,8 +47,8 @@ const PlayHistory = () => {
                 {item.score}
               </div>
               <div className="flex justify-center  px-2 py-2 ">
-                {item.Date}
-                <p>{formattedDate}</p>
+                {formattedDate(item.date)}
+                {/* <p>{formattedDate}</p> */}
               </div>
             </div>
           </div>
