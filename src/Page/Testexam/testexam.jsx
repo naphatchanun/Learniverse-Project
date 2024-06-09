@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { AxiosLib } from "../../lib/axiosLib";
 import { useNavigate, useParams } from "react-router-dom";
 import Exam from "../../component/Exam/Exam";
 import Swal from "sweetalert2";
-import { useContext } from "react";
 import { AuthContext } from "../../context/user";
 import { calcurateScore } from "../../util/calcurateScore";
 
@@ -107,7 +106,7 @@ const Testexam = () => {
   useEffect(() => {
     if (timer >= 0 && isStart) {
       const interval = setInterval(() => {
-        setTimer(timer - 1);
+        setTimer((prevTimer) => prevTimer - 1);
       }, 1000);
       if (timer === 0 && !isFinish) {
         setIsFinish(true);
@@ -129,13 +128,20 @@ const Testexam = () => {
       }
       return () => clearInterval(interval);
     }
-  }, [timer, isStart]);
+  }, [timer, isStart, isFinish, Navigate, payload, examID.examID]);
+
+  const formatTime = (seconds) => {
+    const hours = String(Math.floor(seconds / 3600)).padStart(2, "0");
+    const minutes = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
+    const remainingSeconds = String(seconds % 60).padStart(2, "0");
+    return `${hours}:${minutes}:${remainingSeconds}`;
+  };
 
   return (
     <main className="flex justify-center mt-20">
       {isStart ? (
         <main>
-          <div>Timer : {timer}</div>
+          <div>Timer : {formatTime(timer)}</div>
           {exam.map((item, index) => {
             return (
               <Exam
@@ -156,12 +162,17 @@ const Testexam = () => {
       ) : (
         <main>
           <div className="flex justify-center">
-            <button
-              onClick={handleStart}
-              className="rounded-full bg-[#FB6D48] px-5 py-2 text-white"
-            >
-              Start
-            </button>
+            <div>
+              <h1 className="text-center text-3xl mt-3 font-bold">
+                Are You Ready ?
+              </h1>
+              <button
+                onClick={handleStart}
+                className="rounded-full bg-[#FB6D48] px-5 py-2 text-white mt-5 mx-20"
+              >
+                Start
+              </button>
+            </div>
           </div>
         </main>
       )}
@@ -170,45 +181,3 @@ const Testexam = () => {
 };
 
 export default Testexam;
-
-// CSS อันเก่า
-// <div key={index} className="flex justify-center mt-20">
-//   <div className="border-4 rounded-md border-[#FB6D48] w-auto h-auto">
-//     <h1 className="flex justify-center font-semibold text-xl mt-3 font-serif">
-//       Question 1
-//     </h1>
-//     <h2 className="mt-7 px-10 text-lg ">{item.question}</h2>
-//     <div className="px-10 mt-5 py-3">
-//       <div className="border rounded-md bg-[#FBF3D5] w-auto h-8 px-3 text-sm hover:border-[#FB6D48] border-2">
-//         1.{item.choice[0]}
-//       </div>
-//       <div className="border rounded-md bg-[#FBF3D5] w-auto h-8 px-3 mt-3 text-sm hover:border-[#FB6D48] border-2">
-//         2.{item.choice[1]}
-//       </div>
-//       <div className="border rounded-md bg-[#FBF3D5] w-auto h-8 px-3 mt-3 text-sm hover:border-[#FB6D48] border-2">
-//         3.{item.choice[2]}
-//       </div>
-//       <div className="border rounded-md bg-[#FBF3D5] w-auto h-8 px-3 mt-3 text-sm hover:border-[#FB6D48] border-2">
-//         4.{item.choice[3]}
-//       </div>
-//     </div>
-// <div className="grid grid-cols-2 py-3">
-//   <div className="flex justify-end">
-//     <button
-//       onClick={handleBack}
-//       className="rounded-full bg-[#DDDDDD] px-5 py-2 text-white "
-//     >
-//       Back
-//     </button>
-//   </div>
-//   <div className="flex justify-start px-2">
-//     <button
-//       onClick={handleNext}
-//       className="rounded-full bg-[#FB6D48] px-5 py-2 text-white"
-//     >
-//       Next
-//     </button>
-//   </div>
-// </div>
-//   </div>
-// </div>
