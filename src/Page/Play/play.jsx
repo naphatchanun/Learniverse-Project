@@ -312,7 +312,7 @@ function play() {
                 key={index}
                 className="grid grid-cols-7 w-3/4 text-center place-items-center h-10 py-2 border-b-2 border-[#FB6D48]"
               >
-                <div>{item._id}</div>
+                <div>{index + 1}</div>
                 <div>{item.label}</div>
                 <div>{item.subject}</div>
                 <div>{item.grade}</div>

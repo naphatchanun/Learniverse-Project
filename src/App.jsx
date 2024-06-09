@@ -5,7 +5,6 @@ import { AxiosLib } from "./lib/axiosLib";
 
 //component
 import Navbar from "./component/Navbar/Navbar";
-import Creact from "./Page/Creact/creact";
 import Play from "./Page/Play/play";
 import Firsthome from "./Page/Firsthome/firsthome";
 import Login from "./Page/Login/login";
@@ -16,6 +15,7 @@ import ExamResult from "./Page/ExamResult/ExamResult";
 
 import { AuthContext } from "./context/user";
 import { useCallback, useEffect, useState } from "react";
+import Create from "./Page/Create/Create";
 
 export const App = () => {
   const [authContext, setAuthContext] = useState(ContextValue);
@@ -58,7 +58,7 @@ export const App = () => {
         <Routes>
           <Route>
             <Route path="/" element={<Firsthome />} />
-            <Route path="creact" element={<Creact />} />
+            <Route path="create" element={<Create />} />
             <Route path="play" element={<Play />} />
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<SignUp />} />

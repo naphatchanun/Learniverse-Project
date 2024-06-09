@@ -26,13 +26,13 @@ export const Footer = () => {
                   <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
                 </h1>
               </Link>
-              <Link to="/Creact">
+              <Link to="/Create">
                 <li className="group transition duration-300 w-fit">
-                  Creact
+                  Create
                   <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
                 </li>
               </Link>
-              <Link to="/Creact">
+              <Link to="/play">
                 <li className="group transition duration-300 w-fit">
                   Play
                   <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
