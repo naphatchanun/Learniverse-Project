@@ -53,8 +53,8 @@ export default function First() {
           </div>
         </div>
       </body>
-      <div>
-        <div className="flex justify-center text-3xl mt-10 font-semibold font-serif">
+      <div className="bg-gray-100 h-96">
+        <div className="flex justify-center text-3xl mt-10 font-semibold font-serif py-5">
           About
         </div>
         <div className="flex justify-center font-serif mt-5 text-center">
@@ -65,7 +65,7 @@ export default function First() {
         </div>
         <div className="grid md:grid-cols-[4fr_4fr_4fr] grid-cols-3 mt-5">
           <div className="flex justify-end ">
-            <div className="border-4 rounded-md px-10 w-2/3 py-3 shadow-lg transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 ">
+            <div className="border-4 rounded-md px-10 w-2/3 py-3 bg-white shadow-lg transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 ">
               <div className="flex justify-center">
                 <img src={About2} alt="" className="w-2/5" />
               </div>
@@ -75,7 +75,7 @@ export default function First() {
             </div>
           </div>
           <div className="flex justify-center ">
-            <div className="border-4 rounded-md px-10 w-2/3 py-3 shadow-lg transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">
+            <div className="border-4 rounded-md px-10 w-2/3 py-3 bg-white shadow-lg transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">
               <div className="flex justify-center ">
                 <img src={About1} alt="" className="w-2/5" />
               </div>
@@ -85,7 +85,7 @@ export default function First() {
             </div>
           </div>
           <div className="flex justify-start">
-            <div className="border-4 rounded-md px-10 w-2/3 py-3 shadow-lg transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">
+            <div className="border-4 rounded-md px-10 w-2/3 py-3 bg-white shadow-lg transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">
               <div className="flex justify-center">
                 <img src={About3} alt="" className="w-2/5" />
               </div>
