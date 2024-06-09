@@ -6,11 +6,11 @@ export const Footer = () => {
     <footer className="hidden md:grid mt-10">
       <div className="bg-[#FB6D48]">
         <div className="grid grid-cols-[6fr_2fr_2fr_1fr]">
-          <div className="flex items-center px-10">
+          <div className="flex items-center px-10 ">
             <img
               src={Logo}
               alt="Logo"
-              className="ml-16 w-28 object-cover my-3"
+              className="ml-16 w-36 object-cover my-3"
             />
           </div>
           <div className="flex my-4 justify-center">
@@ -63,18 +63,14 @@ export const Footer = () => {
             </ul>
           </div>
         </div>
-        {/* <div className="flex justify-center">
-          <div className="flex flex-col">
-            <div className="text-sm text-center">
+        <div className="flex justify-center">
+          <div className="flex flex-col py-2">
+            <div className="text-sm text-center text-lg text-white">
               {" "}
-              Oh-myPet v1.0 copyright © 2023
-            </div>
-            <div className="text-sm text-center">
-              {" "}
-              This Project is for Study porpuse
+              © 2024 Learnivers
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
     </footer>
   );

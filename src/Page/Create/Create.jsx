@@ -81,7 +81,7 @@ const Create = () => {
           onSubmit={handleSubmit}
         >
           <div className="rounded-md bg-gray-100 mt-10 px-10 shadow-lg">
-            <h1 className="text-4xl font-bold mt-3 text-center">Create</h1>
+            <h1 className="text-3xl font-bold mt-3 text-center">Create</h1>
             <div className="mt-5 shadow-xl h-10 w-30 px-3">
               <label htmlFor="label" className="px-3 text-lg">
                 Exam name:
@@ -202,77 +202,81 @@ const Create = () => {
                 onChange={handleChange}
               />
             </div>
-            <div className="flex justify-center mt-3">
-              {numberArray.map((_, index) => {
-                return (
-                  <div key={index} className="mt-3">
-                    <label htmlFor={`question${index}`}>
-                      Question: {index + 1}
-                    </label>
-                    <input
-                      type="text"
-                      id={`question${index}`}
-                      required
-                      placeholder="What do you want to ask?"
-                      className="border border-gray-300 rounded-md py-1 px-2  w-80"
-                      onChange={(e) => {
-                        const content = [...payload.content];
-                        content[index] = {
-                          question: e.target.value,
-                          choice: [],
-                          answer: "",
-                        };
-                        setPayload({ ...payload, content });
-                      }}
-                    />
-                    {Array(4)
-                      .fill(1)
-                      .map((_, choiceIndex) => {
-                        return (
-                          <div key={choiceIndex} className="mt-3 ">
-                            <label
-                              htmlFor={`choice${index}${choiceIndex}`}
-                              className="px-2"
-                            >
-                              Choice: {choiceIndex + 1}
-                            </label>
-                            <input
-                              type="text"
-                              required
-                              id={`choice${index}${choiceIndex}`}
-                              placeholder={`Choice ${choiceIndex + 1}`}
-                              className="border border-gray-300 rounded-md py-1 px-2  w-80"
-                              onChange={(e) => {
-                                const content = [...payload.content];
-                                content[index].choice[choiceIndex] = {
-                                  [choiceIndex + 1]: e.target.value,
-                                };
-                                setPayload({ ...payload, content });
-                              }}
-                            />
-                          </div>
-                        );
-                      })}
-                    <label htmlFor={`answer`} className="px-3">
-                      Answer:
-                    </label>
-                    <input
-                      type="number"
-                      id={`answer`}
-                      required
-                      min={1}
-                      max={4}
-                      placeholder="1-4"
-                      className="border border-gray-300 rounded-md py-1 px-2 my-3 w-80"
-                      onChange={(e) => {
-                        const content = [...payload.content];
-                        content[index].answer = e.target.value;
-                        setPayload({ ...payload, content });
-                      }}
-                    />
-                  </div>
-                );
-              })}
+            <div className="">
+              <div className="flex justify-center mt-3">
+                <div>
+                  {numberArray.map((_, index) => {
+                    return (
+                      <div key={index} className="mt-3">
+                        <label htmlFor={`question${index}`}>
+                          Question: {index + 1}
+                        </label>
+                        <input
+                          type="text"
+                          id={`question${index}`}
+                          required
+                          placeholder="What do you want to ask?"
+                          className="border border-gray-300 rounded-md py-1 px-2  w-80"
+                          onChange={(e) => {
+                            const content = [...payload.content];
+                            content[index] = {
+                              question: e.target.value,
+                              choice: [],
+                              answer: "",
+                            };
+                            setPayload({ ...payload, content });
+                          }}
+                        />
+                        {Array(4)
+                          .fill(1)
+                          .map((_, choiceIndex) => {
+                            return (
+                              <div key={choiceIndex} className="mt-3 ">
+                                <label
+                                  htmlFor={`choice${index}${choiceIndex}`}
+                                  className="px-2"
+                                >
+                                  Choice: {choiceIndex + 1}
+                                </label>
+                                <input
+                                  type="text"
+                                  required
+                                  id={`choice${index}${choiceIndex}`}
+                                  placeholder={`Choice ${choiceIndex + 1}`}
+                                  className="border border-gray-300 rounded-md py-1 px-2  w-80"
+                                  onChange={(e) => {
+                                    const content = [...payload.content];
+                                    content[index].choice[choiceIndex] = {
+                                      [choiceIndex + 1]: e.target.value,
+                                    };
+                                    setPayload({ ...payload, content });
+                                  }}
+                                />
+                              </div>
+                            );
+                          })}
+                        <label htmlFor={`answer`} className="px-3">
+                          Answer:
+                        </label>
+                        <input
+                          type="number"
+                          id={`answer`}
+                          required
+                          min={1}
+                          max={4}
+                          placeholder="1-4"
+                          className="border border-gray-300 rounded-md py-1 px-2 my-3 w-80"
+                          onChange={(e) => {
+                            const content = [...payload.content];
+                            content[index].answer = e.target.value;
+                            setPayload({ ...payload, content });
+                          }}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
             <div className="flex justify-center mt-5 py-5">
               <button

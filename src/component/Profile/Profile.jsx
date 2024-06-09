@@ -75,76 +75,140 @@ const Profile = () => {
     handleProfile();
   }, [auth]);
   return (
-    <main className="grid grid-cols-3">
-      <div>
-        <h1>My profile</h1>
-        <div>
-          <p>{profileTemp.displayName}</p>
-          <p>{profileTemp.firstName}</p>
-          <p>{profileTemp.lastName}</p>
-          <p>{profileTemp.email}</p>
-          <p>{profileTemp.phone}</p>
+    <main className="flex justify-center items-center">
+      <div className="rounded-md bg-gray-100 px-10 mt-8 py-10 w-8/12">
+        <h1 className="text-center font-bold text-2xl">My Profile</h1>
+        <div className="grid md:grid-cols-[4fr_6fr] grid-cols-2 space-x-2 mt-3">
+          <div className="shadow-md">
+            <div className="flex justify-start">
+              <div className="rounded-md bg-gray-300 px-4 py-5">
+                <h1 className="text-lg mt-3">
+                  Playname:
+                  <p className="rounded-md bg-white w-64 h-8 px-3 mt-1">
+                    {profileTemp.displayName}
+                  </p>
+                </h1>
+                <h2 className="text-lg mt-3">
+                  Firstname:
+                  <p className="rounded-md bg-white w-64 h-8 px-3 mt-1">
+                    {profileTemp.firstName}
+                  </p>
+                </h2>
+                <h2 className="text-lg mt-3">
+                  Lastname:
+                  <p className="rounded-md bg-white w-64 h-8 px-3 mt-1">
+                    {profileTemp.lastName}
+                  </p>
+                </h2>
+                <h2 className="text-lg mt-3">
+                  Email:
+                  <p className="rounded-md bg-white w-64 h-8 px-3 mt-1 ">
+                    {profileTemp.email}
+                  </p>
+                </h2>
+                <h2 className="text-lg mt-3">
+                  Phone:
+                  <p className="rounded-md bg-white px-3 mt-1">
+                    {profileTemp.phone}
+                  </p>
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div className="rounded-md px-10 py-8">
+            <div className="grid md:grid-cols-[4fr_6fr] grid-cols-2 space-x-5">
+              <div className="flex justify-center">
+                <div className="rounded-md px-4 ">
+                  <h1 className="text-lg">Edit Profile</h1>
+                  <form onSubmit={handleEditSumbit} className="">
+                    <input
+                      type="text"
+                      name="firstName"
+                      className="w-64 h-8 rounded-md px-2 border-2 rounded-md px-2 mt-2 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
+                      disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
+                      placeholder={profile.firstName}
+                      onChange={handleEditChange}
+                    />
+                    <input
+                      type="text"
+                      name="lastName"
+                      className="w-64 h-8 rounded-md px-2 mt-2 border-2 rounded-md px-2 mt-2 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
+                      disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
+                      placeholder={profile.lastName}
+                      onChange={handleEditChange}
+                    />
+                    <input
+                      type="text"
+                      name="displayName"
+                      className="w-64 h-8 rounded-md px-2 mt-2 border-2 rounded-md px-2 mt-2 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
+                      disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
+                      placeholder={profile.displayName}
+                      onChange={handleEditChange}
+                    />
+                    <input
+                      type="text"
+                      name="email"
+                      className="w-64 h-8 rounded-md px-2 mt-2 border-2 rounded-md px-2 mt-2 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
+                      disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
+                      placeholder={profile.email}
+                      onChange={handleEditChange}
+                    />
+                    <input
+                      type="text"
+                      name="phone"
+                      className="w-64 h-8 rounded-md px-2 mt-2 border-2 rounded-md px-2 mt-2 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
+                      disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
+                      placeholder={profile.phone}
+                      onChange={handleEditChange}
+                    />
+                    {/* <input type="submit" value="Save" /> */}
+                    <div className="mt-4 flex justify-center">
+                      <botton className="rounded-md bg-[#FB6D48] text-white px-12 py-1">
+                        Save
+                      </botton>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div className="flex justify-center">
+                <div>
+                  <h1 className="text-lg">Change password</h1>
+                  <form onSubmit={handlePasswordSubmit}>
+                    <input
+                      type="password"
+                      placeholder="Old password"
+                      className="w-64 h-8 border-2 rounded-md px-2 mt-2 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
+                      disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
+                      name="oldPassword"
+                      onChange={handlePasswordChange}
+                    />
+                    <input
+                      type="password"
+                      placeholder="New password"
+                      className="w-64 h-8 rounded-md px-2 mt-2 border-2 rounded-md px-2 mt-2 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
+                      disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
+                      name="newPassword"
+                      onChange={handlePasswordChange}
+                    />
+                    <input
+                      type="password"
+                      placeholder="Confirm new password"
+                      className="w-64 h-8 rounded-md px-2 mt-2 border-2 rounded-md px-2 mt-2 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
+                      disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
+                      name="confirmPassword"
+                      onChange={handlePasswordChange}
+                    />
+                    <div className="mt-4 flex justify-center">
+                      <botton className="rounded-md bg-[#FB6D48] text-white px-12 py-1">
+                        Save
+                      </botton>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div>
-        <h1>Edit Profile</h1>
-        <form onSubmit={handleEditSumbit}>
-          <input
-            type="text"
-            name="firstName"
-            placeholder={profile.firstName}
-            onChange={handleEditChange}
-          />
-          <input
-            type="text"
-            name="lastName"
-            placeholder={profile.lastName}
-            onChange={handleEditChange}
-          />
-          <input
-            type="text"
-            name="displayName"
-            placeholder={profile.displayName}
-            onChange={handleEditChange}
-          />
-          <input
-            type="text"
-            name="email"
-            placeholder={profile.email}
-            onChange={handleEditChange}
-          />
-          <input
-            type="text"
-            name="phone"
-            placeholder={profile.phone}
-            onChange={handleEditChange}
-          />
-          <input type="submit" value="Save" />
-        </form>
-      </div>
-      <div>
-        <h1>Change password</h1>
-        <form onSubmit={handlePasswordSubmit}>
-          <input
-            type="password"
-            placeholder="Old password"
-            name="oldPassword"
-            onChange={handlePasswordChange}
-          />
-          <input
-            type="password"
-            placeholder="New password"
-            name="newPassword"
-            onChange={handlePasswordChange}
-          />
-          <input
-            type="password"
-            placeholder="Confirm new password"
-            name="confirmPassword"
-            onChange={handlePasswordChange}
-          />
-          <input type="submit" value="Save" />
-        </form>
       </div>
     </main>
   );
