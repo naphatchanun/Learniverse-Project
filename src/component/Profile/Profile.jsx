@@ -176,7 +176,7 @@ const Profile = () => {
                   <form onSubmit={handlePasswordSubmit}>
                     <input
                       type="password"
-                      placeholder="Old password"
+                      placeholder="oldPassword"
                       className="w-64 h-8 border-2 rounded-md px-2 mt-2 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
                       disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
                       name="oldPassword"
@@ -184,7 +184,7 @@ const Profile = () => {
                     />
                     <input
                       type="password"
-                      placeholder="New password"
+                      placeholder="newPassword"
                       className="w-64 h-8 rounded-md px-2 mt-2 border-2 rounded-md px-2 mt-2 focus:outline-none focus:border-[#FB6D48] focus:ring-1 focus:ring-[#FB6D48]
                       disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
                       name="newPassword"
